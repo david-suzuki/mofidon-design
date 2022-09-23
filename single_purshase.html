@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html dir="rtl">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Gurdeep singh osahan">
+      <meta name="author" content="Gurdeep singh osahan">
+      <title>Mofidon - Single Purshase</title>
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="images/loogo.png">
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Font Awesome-->
+      <link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+      <!-- Material Design Icons -->
+      <link href="vendor/icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+      <!-- Slick -->
+      <link href="vendor/slick-master/slick/slick.css" rel="stylesheet" type="text/css">
+      <!-- Lightgallery -->
+      <link href="vendor/lightgallery-master/dist/css/lightgallery.min.css" rel="stylesheet">
+      <!-- Select2 CSS -->
+      <link href="vendor/select2/css/select2-bootstrap.css" />
+      <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet">
+      
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="css/jquery-file-uploader/fancy_fileupload.css">
+   </head>
+   <body>
+      <!--    header -->
+
+<style>
+   #div1 {
+  display: inline;
+}
+
+#div2 {
+  display: none;
+}
+
+.display-none {
+  display: none !important;
+}
+.display-inline {
+  display: inline !important;
+}
+
+
+
+
+
+
+</style>
+
+          
+<style>
+
+   /* Area of Upload */  
+   
+   .file-upload {
+       background-color: #ffffff;
+       width: 100%;
+       margin: 0 auto;
+       padding: 20px;
+     }
+     
+     .file-upload-btn {
+       width: 100%;
+       margin: 0;
+       color: #fff;
+       background: #1f70b2;
+       border: none;
+       padding: 10px;
+       border-radius: 4px;
+       border-bottom: 4px solid #164974;
+       transition: all .2s ease;
+       outline: none;
+       text-transform: uppercase;
+       font-weight: 700;
+     }
+     
+     .file-upload-btn:hover {
+       background: #164974;
+       color: #ffffff;
+       transition: all .2s ease;
+       cursor: pointer;
+     }
+     
+     .file-upload-btn:active {
+       border: 0;
+       transition: all .2s ease;
+     }
+     
+     .file-upload-content {
+       display: none;
+       text-align: center;
+     }
+     
+     .file-upload-input {
+       position: absolute;
+       margin: 0;
+       padding: 0;
+       width: 100%;
+       height: 100%;
+       outline: none;
+       opacity: 0;
+       cursor: pointer;
+     }
+     
+     .image-upload-wrap {
+       margin-top: 20px;
+       position: relative;
+     }
+     
+     .image-dropping,
+     .image-upload-wrap:hover {
+       background-color: #1FB264;
+       border: 4px dashed #ffffff;
+     }
+     
+     .image-title-wrap {
+       padding: 0 15px 15px 15px;
+       color: #222;
+     }
+     
+     .drag-text {
+       text-align: center;
+     }
+     
+     .drag-text h3 {
+       font-weight: 100;
+       text-transform: uppercase;
+       color: #15824B;
+       padding: 60px 0;
+     }
+     
+     .file-upload-image {
+       max-height: 200px;
+       max-width: 200px;
+       margin: auto;
+       padding: 20px;
+     }
+     
+     .remove-image {
+       width: 200px;
+       margin: 0;
+       color: #fff;
+       background: #cd4535;
+       border: none;
+       padding: 10px;
+       border-radius: 4px;
+       border-bottom: 4px solid #b02818;
+       transition: all .2s ease;
+       outline: none;
+       text-transform: uppercase;
+       font-weight: 700;
+     }
+     
+     .remove-image:hover {
+       background: #c13b2a;
+       color: #ffffff;
+       transition: all .2s ease;
+       cursor: pointer;
+     }
+     
+     .remove-image:active {
+       border: 0;
+       transition: all .2s ease;
+     }
+   
+   
+   
+   
+   /* Add new row */  
+   
+   .login {
+       width: 25%;
+     }
+     
+     .bottom{
+       position: absolute;
+       bottom:0;
+       left: 0;
+     }
+     
+     .logout {
+       position: absolute;;
+       top:10px;
+       right:10px;
+     }
+     
+     .up-directory {
+       position: absolute;;
+       top:10px;
+       left:12%;
+     }
+     
+     .form-label {
+       text-align: right;
+     }
+     
+     .form-text{
+       text-transform: capitalize;;
+     }
+     
+     .column-center {
+       border-left: 1px solid #EEE;
+       /*border-right: 1px solid #EEE;*/
+     }
+     
+     .column-right {
+       border-left: 1px solid #EEE;
+       /*border-right: 1px solid #EEE;*/
+     }
+     
+     .general_padding {
+       padding: 0 5px;
+     }
+     
+     #ajax_msg{
+       height: auto;
+     }
+     
+     .suc_msg {
+       padding: 3px 5px;
+       /*height: 30px;*/
+       border-style: solid;
+       border-width: 1px;
+       border-radius: 4px;
+       border-color: #00B233;
+       background-color: rgba(0,255,72,.3);
+       color: #00B233;
+     }
+     
+     .err_msg {
+       padding: 3px 5px;
+       /*height: 30px;*/
+       border-style: solid;
+       border-width: 1px;
+       border-radius: 4px;
+       border-color: #B20000;
+       background-color: rgba(255,25,25,.3);
+       color: #B20000;
+     }
+     
+     /*Table styling/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+     .invoice_table tr:nth-child(2n+0){
+       background-color: rgba(31,141,214,0.1);
+     }
+     
+     .invoice_table tr{
+       height: 30px;
+       font-size: 14px;
+     }
+     
+     .invoice_table button{
+       height: 20px;
+       font-size: 11px;
+       margin-top: auto;
+       margin-bottom: auto;
+     }
+     
+     /*Open Invoice Table styling/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+     
+     .openInvoice-list tr{
+       font-size: 13px;
+     }
+     
+     table.entity_list_table {
+       border-collapse:collapse;
+     }
+     
+     table.openInvoice-list th, table.openInvoice-list td {
+       padding: 2px 15px 2px 15px;
+       text-align: center;
+     }
+     
+     table.openInvoice-list thead th {
+       background-color:rgb(249,249,249);
+     }
+     
+     table.openInvoice-list tfoot td {
+       background-color:#ffccff;
+     }
+     
+     table.openInvoice-list tbody tr{  
+       border:1px solid rgba(0,0,0,.2);
+       border-right-style: none;
+       border-left-style: none;
+     }
+     
+     table.openInvoice-list tr.tbody_header {
+       font-weight:bold;
+       text-align:center;
+       background-color:#dddddd;
+     }
+     
+     table.openInvoice-list a.pagelink {
+       padding-left:5px;
+       padding-right:5px;
+       border:1px solid #666666;
+       margin:0px 5px 0px 5px;
+     }
+     
+     /*// Invoice Number */
+     .openInvoice-list th:first-child{
+       width:80px;
+     }
+     
+     /*// Date */
+     .openInvoice-list th:nth-child(2){
+       width:100px;
+     }
+     
+     /*// Days Aging */
+     .openInvoice-list th:nth-child(3){
+       width:110px;
+     }
+     
+     /*// Customer */
+     .openInvoice-list th:nth-child(4){
+       width:190px;
+     }
+     
+     /*// Invoice Total */
+     .openInvoice-list th:nth-child(5){
+       width:120px;
+     }
+     
+     /*// Amount Paid */
+     .openInvoice-list th:nth-child(6){
+       width:120px;
+     }
+     
+     /*// Open Balance */
+     .openInvoice-list th:nth-child(7){
+       width:120px;
+     }
+     
+     /*Form Styling ///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+     
+     .rate {
+       width: 100%;
+     }
+     
+     .qty {
+       width:100%;
+     }
+     
+     .total {
+       width: 100%;
+     }
+     
+     
+     /* CSS for Journal Entrees */
+     
+     .remove-btn {
+       width: 20px;
+       background:#CA5454;
+       color:white;
+     }
+     
+     .je .top, .je .bottom {
+       
+     background:#191818;
+       
+     }
+     .je tr:nth-child(even) {
+       background: #f2f2f2
+     }
+     
+     .je tr:nth-child(odd) {
+       background: #FFF
+     }
+     
+     
+     /* toggles row when input is in focus */
+     
+     .je tr.active {
+       background: #C6EBF7
+     }
+     
+     .je tr.button-row, .je tr.button-row button {
+       background: #1f8dd6;
+       color:white;
+       font-size:105%;
+     }
+     
+     .je .button-td {
+       text-align: center;
+       border: solid;
+       border-width: 1px;
+       border-color: gray;
+     }
+     
+     .je table thead {
+       border-bottom: solid;
+       border-width: 1px;
+       border-color: #909090;
+     }
+     
+     
+     /* ----- | padding | ----- */
+     
+     .section-01 {
+       padding-left: 85px; 
+       padding-right: 85px;
+       padding-bottom: 15px;
+       
+     }
+     
+     .section-02 {
+       padding-top: 15px;
+       /*padding-left: 85px; */
+       padding-right: 85px;
+       padding-bottom: 15px;
+       border: solid;
+       border-top-width: 1px;
+       border-left-width: 0px;
+       border-right-width: 0px;
+       border-bottom-width: 1px;
+       border-color: gray;
+       
+     }
+     
+     .section-03 {
+       padding-top: 25px;
+       padding-left: 11%; 
+       padding-right: 85px;
+       padding-bottom: 15px;
+     }
+     
+     .section-04 {
+       padding-top: 25px;
+       padding-left: 85px; 
+       padding-right: 85px;
+       padding-bottom: 15px;
+     }
+     
+     
+     /* ----- | Global Settings | ----- */
+     
+     
+     /*GLOBAL alignments */
+     
+     .text-center {
+       text-align: center;
+     }
+     
+     .center-block {
+       display: block;
+       margin-right: auto;
+       margin-left: auto;
+     }
+     
+     .pull-right {
+       float: right !important;
+     }
+     
+     .pull-left {
+       float: left !important;
+     }
+     
+     
+     /* GLOBAL pure btn custom */
+     
+     .pure-button {
+       border: solid;
+       border-color: gray;
+       border-width: 1px;
+       border-radius:3px;
+     }
+     
+     .button-xsmall {
+       font-size: 70%;
+     }
+     
+     .button-small {
+       font-size: 85%;
+     }
+     
+     .button-large {
+       font-size: 110%;
+     }
+     
+     .button-xlarge {
+       font-size: 125%;
+       font-weight:bold;
+     }
+     
+     .new-row-btn,.new-row-btn:hover {
+       width:100%;
+       border:none;
+       background:none;
+       font-weight:bold;
+     }
+     
+     
+     
+     
+     /* ----- | Global Settings End | ----- */
+     
+     .cur_span{
+       position:absolute;
+     }
+     
+     /* .currency {
+       padding-left:12px;
+     }
+     
+     .currency-symbol {
+       position:absolute;
+       padding: 1px 5px;
+     } */
+   
+   #journal-entrees, #journal-entrees2, #journal-entrees3 {width: 100%;margin-top: 15px;}
+   #journal-entrees tr, #journal-entrees2 tr, #journal-entrees3 tr {margin-bottom: 15px !important;display: block;}
+   #journal-entrees tr td:nth-child(3), #journal-entrees2 tr td:nth-child(3), #journal-entrees3 tr td:nth-child(3) {width: 50px;text-align: center;}
+   
+   
+   .form-group + .form-group {
+     margin-top: 16px;
+   }
+   .form-group .form-group-input-container {
+     position: relative;
+   }
+   .form-group .form-control {
+     height: 40px;
+     width: 100%;
+     border-radius: 5px;
+     padding: 0 10px;
+     border: 1px solid #a0aec0;
+     font-size: 0.9rem;
+     color: #4a5568;
+     font-family: inherit;
+     text-align: right;
+   }
+   .form-group .form-control::-webkit-input-placeholder {
+     color: #a0aec0;
+     text-align: right;
+   }
+   .form-group .form-control::-moz-placeholder {
+     color: #a0aec0;
+   }
+   .form-group .form-control:-ms-input-placeholder {
+     color: #a0aec0;
+   }
+   .form-group .form-control:-moz-placeholder {
+     color: #a0aec0;
+   }
+   .form-group .form-group-label {
+     font-weight: bold;
+     display: block;
+     margin-bottom: 8px;
+   }
+   .form-group .form-group-help {
+     font-size: 0.875rem;
+     margin-top: 8px;
+     display: block;
+     color: #718096;
+   }
+   .form-group details summary {
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: block;
+     outline: none;
+     color: #718096;
+     opacity: 0.5;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .form-group details summary:hover {
+     cursor: pointer;
+     opacity: 1;
+   }
+   .form-group details summary svg {
+     width: 20px;
+     height: 20px;
+   }
+   .form-group details summary::-webkit-details-marker {
+     display: none;
+   }
+   .textarea{
+     height: 300px !important;
+     padding-top: 10px !important;
+   }
+   
+   .upload{
+     height: 10px !important;
+   }
+   
+   </style>
+   
+   
+
+  
+   <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">
+    <div class="container">
+       <!-- Sidebar Toggle (Topbar) -->
+       <a class="navbar-brand logo-img" href="index.html"></a>
+       <!-- Topbar Search -->
+       <form class="d-none d-sm-inline-block form-inline mr-auto my-md-0 mw-100 navbar-search">
+          <div class="search-box">
+             <button class="search-btn"><i class="fa fa-search fa-sm"></i></button>
+             <input class="search-input" type="text" placeholder="Search about service..">
+           </div>
+           <!-- You just need to get this field. End -->
+       </form>
+       <!-- Topbar Navbar -->
+       <ul class="navbar-nav">
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications d-sm-none">
+             <div class="search-box">
+                <button class="search-btn"><i class="fa fa-search fa-sm"></i></button>
+                <input class="search-input" type="text" placeholder="Search about service..">
+              </div>
+              <!-- You just need to get this field. End -->
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications d-sm-none">
+             <a class="btn btn-icon dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <i class="fa fa-search fa-fw"></i>
+             </a>
+             <!-- Dropdown - Messages -->
+             <div class="dropdown-menu dropdown-menu-right p-3 shadow-sm animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                   <div class="input-group">
+                      <input type="text" class="form-control bg-light border-0 small" placeholder="Find Services..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                         <button class="btn btn-primary" type="button">
+                         <i class="fa fa-search fa-sm"></i>
+                         </button>
+                      </div>
+                   </div>
+                </form>
+             </div>
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+             <a href="new_service.html" class="badge badge-dark p-3">Add new service &nbsp;  <i class="fa fa-plus-circle"></i></a>
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+             <span class="badge-dropdown tracker-wishlist"><b>3</b></span>
+             <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-heart fa-sm"></i>
+             </a>
+             <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+                <h6 class="dropdown-header dropdown-notifications-header">
+                   <i class="fa fa-heart ml-2" aria-hidden="true"></i>
+                  Favorite
+                </h6>
+                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                   <style>
+                      .dropdown-notifications-item-img{
+                         border-radius: 5px !important;
+                      }
+                   </style>
+                   <img class="dropdown-notifications-item-img-2 dropdown-notifications-item-img" src="images/ahmed.jpeg">
+                   <div class="dropdown-notifications-item-content">
+                      <div class="dropdown-notifications-item-content-text">I will buy a new server for you..</div>
+                      <div class="dropdown-notifications-item-content-details"><b class="green-color"> Start from 10 Saudi rials</b></div>
+                   </div>
+                </a>
+                <a class="dropdown-item dropdown-notifications-footer" href="favorite.html">See Fav page</a>
+             </div>
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+              <span class="badge-dropdown tracker-cart"><b>1</b></span>
+             <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-shopping-cart fa-sm"></i>
+             </a>
+             <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+                <h6 class="dropdown-header dropdown-notifications-header">
+                   <i class="fa fa-shopping-cart ml-2" aria-hidden="true"></i>
+                  Cart
+                </h6>
+                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                   <style>
+                      .dropdown-notifications-item-img{
+                         border-radius: 5px !important;
+                      }
+                   </style>
+                   <img class="dropdown-notifications-item-img-2 dropdown-notifications-item-img" src="images/ahmed.jpeg">
+                   <div class="dropdown-notifications-item-content">
+                      <div class="dropdown-notifications-item-content-text">I will buy a new server for you..</div>
+                      <div class="dropdown-notifications-item-content-details"><b class="green-color"> Start from 10 Saudi rials</b></div>
+                   </div>
+                </a>
+                <a class="dropdown-item dropdown-notifications-footer" href="cart.html">See cart page</a>
+             </div>
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+             <span class="badge-dropdown tracker-notifications"><b>3</b></span>
+             <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell ml-2">
+                   <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                   <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+             </a>
+             <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
+                <h6 class="dropdown-header dropdown-notifications-header">
+                   <i class="fa fa-bell ml-2" aria-hidden="true"></i>
+                   Notification
+                </h6>
+                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                   <div class="dropdown-notifications-item-icon bg-warning">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                      </svg>
+                   </div>
+                   <div class="dropdown-notifications-item-content">
+                      <div class="dropdown-notifications-item-content-text">You have successfully submit a new service to be reviewed</div>
+                      <div class="dropdown-notifications-item-content-details"> 30 minutes ago</div>
+                   </div>
+                </a>
+                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                   <div class="dropdown-notifications-item-icon bg-warning">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                      </svg>
+                   </div>
+                   <div class="dropdown-notifications-item-content">
+                      <div class="dropdown-notifications-item-content-text"> You need to re-submit from here</div>
+                      <div class="dropdown-notifications-item-content-details">13 minutes ago</div>
+                   </div>
+                </a>
+                <a class="dropdown-item dropdown-notifications-footer" href="notifications.html">See notifications page</a>
+             </div>
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+             <span class="badge-dropdown tracker-messages"><b>3</b></span>
+             <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail m-2">
+                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                   <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+             </a>
+             <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+                <h6 class="dropdown-header dropdown-notifications-header">
+                   <i class="fa fa-comments-o ml-2" aria-hidden="true"></i>
+                   Messages
+                </h6>
+                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                   <img class="dropdown-notifications-item-img" src="images/Elzubair.jpg">
+                   <div class="dropdown-notifications-item-content">
+                      <div class="dropdown-notifications-item-content-text">Hello there</div>
+                      <div class="dropdown-notifications-item-content-details">1 minute ago</div>
+                   </div>
+                </a>
+                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                   <img class="dropdown-notifications-item-img" src="images/Elzubair.jpg">
+                   <div class="dropdown-notifications-item-content">
+                      <div class="dropdown-notifications-item-content-text">Pls accept my invite</div>
+                      <div class="dropdown-notifications-item-content-details">2 minutes ago</div>
+                   </div>
+                </a>
+                <a class="dropdown-item dropdown-notifications-footer" href="messages.html">See messages</a>
+             </div>
+          </li>
+          <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-user border-grey">
+             <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid " src="images/Elzubair.jpg"></a>
+             <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                <h6 class="dropdown-header d-flex align-items-center">
+                   <img class="dropdown-user-img border-dropdown-profile" src="images/Elzubair.jpg">
+                   <div class="dropdown-user-details">
+                      <div class="dropdown-user-details-name">Elzubair Mohammed Saleh</div>
+                      <div class="dropdown-user-details-email">alzober1414@gmail.com</div>
+                   </div>
+                </h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="dashboard.html">
+                   <i class="fa fa-user-circle ml-2" aria-hidden="true"></i>
+                   Profile
+                </a>
+                <a class="dropdown-item" href="setting.html">
+                   <i class="fa fa-cog ml-2" aria-hidden="true"></i>
+                   Settings
+                </a>
+                <a class="dropdown-item" href="my_services.html">
+                   <i class="fa fa-briefcase ml-2" aria-hidden="true"></i>
+                   My services
+                </a>
+                <a class="dropdown-item" href="compare.html">
+                   <i class="fa fa-bar-chart ml-2" aria-hidden="true"></i>
+                   Comapre
+                </a>
+                <a class="dropdown-item" href="tickets.html">
+                   <i class="fa fa-life-ring ml-2" aria-hidden="true"></i>
+                   My tickets
+                </a>
+                <a class="dropdown-item">
+                   <div class="darkmode"><!--3-->
+                      <div class="light fa fa-sun-o"><!--4--></div>
+                      <div class="dark fa fa-moon-o"><!--5--></div>
+                      Change mode
+                    </div> 
+                </a>
+                <a class="dropdown-item" href="#">
+                   <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
+                   Logout
+                </a>
+             </div>
+          </li>
+       </ul>
+       
+    </div>
+ </nav>
+ 
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-nav osahan-nav-mid px-0 shadow-sm">
+    <div class="container">
+       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Marketing</b>  <i class="fa fa-building" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                   <a class="dropdown-item" href="product.html">Online Marketing sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Online Marketing sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Online Marketing sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Writing & translations</b> <i class="fa fa-desktop" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                   <a class="dropdown-item" href="product.html">Writing & translations sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Writing & translations sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Writing & translations sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Business</b> <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
+                   <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Development</b> <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                   <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Sounds </b> <i class="fa fa-globe" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu">
+                   <a class="dropdown-item" href="product.html">Sounds sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Sounds sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Sounds sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Teaching online</b> <i class="fa fa-microphone" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu">
+                   <a class="dropdown-item" href="product.html">Teaching online sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Teaching online sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Entertainment</b> <i class="fa fa-microphone" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu">
+                   <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Design</b> <i class="fa fa-video-camera" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu">
+                   <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <b>Others</b> <i class="fa fa-video-camera" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu">
+                   <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                   <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                </div>
+             </li>
+          </ul>
+       </div>
+       <ul class="navbar-nav ml-auto">
+          <!-- Here -->
+          <!-- <li class="nav-item">
+             <a class="nav-link" href="become-a-seller.html">
+                <span>أضف خدمة</span>
+             <i class="fa fa-fw fa-plus-circle"></i>
+             </a>
+          </li> -->
+          <!-- <li class="nav-item">
+             <a class="nav-link" href="become-a-seller.html">
+                <span>أصبح مفيد</span>
+             <i class="fa fa-fw fa-trophy"></i>
+             </a>
+          </li> -->
+       </ul>
+    </div>
+ </nav>
+
+ 
+      
+      <section class="bg-profile inner-header">
+         <div class="" id="div1">
+
+            <div class="bg-profile-color">
+               <div class="container py-5">
+                  <div class="row">
+                     <div class="col-md-7">
+                        <div class="profile-information">
+                           <h4> I will buy for you premium plugin for you</h4>
+                        </div>
+                     </div>
+                     <div class="col-md-5">
+                        <button type="button" class="btn btn-dark px-4 py-2">Under working <span class="fa fa-battery-half"></span></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tabs">
+               <div class="tabs-header">
+                 <div class="border"></div>
+                 <div class="container">
+                  <ul class="">
+                    <li class="active"><a href="#tab-1" tab-id="1" ripple="ripple" ripple-color="#FFF">Chatting</a></li>
+                    <li><a href="#tab-2" tab-id="2" ripple="ripple" ripple-color="#FFF">Files</a></li>
+                    <li><a href="#tab-3" tab-id="3" ripple="ripple" ripple-color="#FFF">Payment</a></li>
+                    <li><a href="#tab-4" tab-id="4" ripple="ripple" ripple-color="#FFF">Review</a></li>
+                  </ul>
+                 </div>
+                 
+                
+               </div>
+
+               <div class="tabs-content">
+                 <div class="tab active" tab-id="1">
+         
+                  <div class="container pb-4">
+                     <div class="row">
+                        <div class="col-8 right">
+         
+                           <div class="bg-white bg-white-dark border-grey-full ">
+                           <div class="py-4 px-4 d-flex align-items-center  border-bottom osahan-post-header">
+                              <div class="font-weight-bold mr-1 overflow-hidden">
+                                 <div class="user-profile-image py-2">
+                                    <label class="user-pict">
+                                    <img
+                                       src="images/Elzubair.jpg"
+                                       class="img-fluid message-profile-pic border-grey" alt="Mofid profile">
+                                    </label>
+                                       <span>Programmer</span> - <b class="">Elzubair Mohammed Saleh</b>
+                                 </div>
+                              </div>
+                              <span class="mr-auto">
+                                 <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-left">
+                                       <button class="dropdown-item" type="button" id="b1"><i class="mdi mdi-x-circle"></i> Report spam </button>
+                                    </div>
+                                 </div>
+                              </span>
+                           </div>
+                           <div class="osahan-chat-box p-3 border-top border-bottom bg-light">
+                              <div class="parent_message hide">
+                              <div class="text-center my-3">
+                                 <span class="px-3 py-2 small bg-white shadow-sm  rounded">DEC 21, 2020</span>
+                              </div>
+                              <div class="alert alert-light" role="alert">
+                                 <div class="d-flex align-items-center osahan-post-header">
+                                    <div class="dropdown-list-image mr-3 mb-auto"><img class="rounded-circle border-grey" src="images/Elzubair.jpg" alt=""></div>
+                                    <div class="mr-1">
+                                       <div class="text-truncate h6 mt-2 right">Ahmed Mohammed
+                                       </div>
+                                       <p class="mt-2" style="margin-top: 20px !important;">Hello elzubair thanks</p>
+                                    </div>
+                                    <span class="ml-auto mb-auto">
+                                       <div class="text-right text-muted pt-1 mt-2 small right">00:21PM</div>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="alert alert-light" role="alert">
+                                 <div class="d-flex align-items-center osahan-post-header">
+                                    <div class="dropdown-list-image mr-3 mb-auto"><img class="rounded-circle border-grey" src="images/Elzubair.jpg" alt=""></div>
+                                    <div class="mr-1">
+                                       <div class="text-truncate h6 mt-2 right">Ahmed Mohammed
+                                       </div>
+                                       <p class="mt-2" style="margin-top: 20px !important;">Hello elzubair thanks</p>
+                                    </div>
+                                    <span class="ml-auto mb-auto">
+                                       <div class="text-right text-muted pt-1 mt-2 small right">00:21PM</div>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="text-center my-3">
+                                 <span class="px-3 py-2 small bg-white shadow-sm rounded">DEC 22, 2020</span>
+                              </div>
+                              <div class="alert alert-light" role="alert">
+                                 <div class="d-flex align-items-center osahan-post-header">
+                                    <div class="dropdown-list-image mr-3 mb-auto"><img class="rounded-circle border-grey" src="images/Elzubair.jpg" alt=""></div>
+                                    <div class="mr-1">
+                                       <div class="text-truncate h6 mt-2 right">Ahmed Mohammed
+                                       </div>
+                                       <p class="mt-2" style="margin-top: 20px !important;">Hello elzubair thanks</p>
+                                    </div>
+                                    <span class="ml-auto mb-auto">
+                                       <div class="text-right text-muted pt-1 mt-2 small right">00:21PM</div>
+                                    </span>
+                                 </div>
+                              </div>
+                              </div>
+                              <div class="before_message_display">
+                                 <center>
+                                    <img src="images/cancel.svg" class="single-message-no-img " alt="">
+                                    <h5 class="align-items-center mt-4 "><b>Sorry, there is no message yet</b></h5>
+                                 </center>
+                              </div>
+                           </div>
+                           <div class="w-100 border-top border-bottom">
+                              <textarea placeholder="Write your message.." class="form-control border-0 p-3 shadow-none" rows="2"></textarea>
+                           </div>
+                           <div class="p-3 d-flex align-items-center">
+                              <span class="ml-auto">
+                              <button type="button" class="btn btn-primary btn-sm rounded more-width py-2 px-4">
+                              <i class="mdi mdi-send"></i> Send 
+                              </button>
+                              </span>
+                              <div class="overflow-hidden">
+                                 <button type="button" class="btn btn-light btn-sm rounded">
+                                 <i class="mdi mdi-image"></i>
+                                 </button>
+                                 <button type="button" class="btn btn-light btn-sm rounded">
+                                 <i class="mdi mdi-paperclip"></i>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-4 left">
+                           <div class="sticky">
+                           <div class="profile_info">
+                              <div class="seller-card">
+                                 <h4>Service info</h4>
+                                 <div class="user-stats-desc">
+                                    <style>
+                                       .user-stats li{
+                                          margin-right: -20px;
+                                       }
+                                    </style>
+                                    <ul class="user-stats">
+                                       <li class="">Price <strong>2000 SR</strong></li>
+                                       <li class=""><span class="mt-2">Service type</span> <strong>
+                                          <button type="button" class="btn btn-primary">Premium </button></strong></li>
+                                    </ul>
+                                 </div>
+                                 <button class="btn btn-primary full-width mt-3" id="b1">
+                                    Start the work
+                                 </button>
+                              </div>
+                           </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  </div>
+                 <div class="tab" tab-id="2">
+         
+                  <div class="container pb-4">
+                     <div class="row">
+                        <div class="col-8 right">
+                           <div class="box shadow-sm rounded bg-white mb-3">
+                              <div class="box-title border-bottom p-3">
+                                 <h6 class="m-0">Files</h6>
+                              </div>
+                              <div class="box-body p-0">
+                                 <div class="p-3  align-items-center bg-light border-bottom ">
+                                    <div class=" d-flex mr-3">
+                                       <img class="file-single-purchase" src="images/img.png" alt="">
+                                       <b class="link-payment-number">elzubair_marketing_23394040.jpg</b>
+                                       <a href="#"><b class="link-payment-delete lefft">Download</b></a>
+                                    </div>
+                                 </div>
+                                 <div class="p-3  align-items-center bg-light border-bottom">
+                                    <div class=" d-flex mr-3">
+                                       <img class="file-single-purchase" src="images/pdf.png" alt="">
+                                       <b class="link-payment-number">elzubair_marketing_23394040.pdf</b>
+                                       <a href="#"><b class="link-payment-delete lefft">Download</b></a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="box shadow-sm rounded bg-white mb-3">
+                              <div class="box-title border-bottom p-3">
+                                 <h6 class="m-0">Files</h6>
+                              </div>
+                              <div class="box-body p-0">
+                                 <div class="p-3  align-items-center bg-light border-bottom ">
+                                    <center>
+                                       <img src="images/no-data.svg" class="single-message-no-img " alt="">
+                                       <h5 class="align-items-center mt-4 "><b>There is no files yet.</b></h5>
+                                    </center>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="box shadow-sm rounded bg-white ">
+                              <div class="box-title border-bottom p-3">
+                                 <h6 class="m-0">Files</h6>
+                              </div>
+                              <div class="box-body p-0">
+                                 <div class="p-5  align-items-center bg-light border-bottom ">
+                                       
+                                       <!-- Upload Area -->
+                                       <!-- <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                                       <div class="file-upload">
+                                         <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">إضافة صورة / فيديو</button>
+                                       
+                                         <div class="image-upload-wrap">
+                                           <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" multiple />
+                                          
+                                         </div>
+                                         <div class="file-upload-content">
+                                           <img class="file-upload-image" src="#" alt="your image" />
+                                           <div class="image-title-wrap">
+                                             <button type="button" onclick="removeUpload()" class="remove-image">حذف الملف</button>
+                                           </div>
+                                         </div>
+                                       </div> -->
+                                       <!-- End Upload Area -->
+                                       <input id="demo" class="upload" height="10px" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                         <center><b class="mt-3 font-size-15">Upload/Drag the files here</b></center>
+                        <!-- End Upload Area -->
+                        <p class="green-color pt-2"> <span data-toggle="tooltip" data-placement="top" title="You have to"><i class="fa fa-question-circle" aria-hidden="true"></i></span> You have 10 files allwoed to upload</p>
+               
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 left">
+                           <div class="sticky">
+                           <div class="profile_info">
+                              <div class="seller-card">
+                                 <h4>Service info</h4>
+                                 <div class="user-stats-desc">
+                                    <style>
+                                       .user-stats li{
+                                          margin-right: -20px;
+                                       }
+                                    </style>
+                                    <ul class="user-stats">
+                                       <li class="">Price <strong>2000 SR</strong></li>
+                                       <li class=""><span class="mt-2">Service type</span> <strong>
+                                          <button type="button" class="btn btn-primary">Premium </button></strong></li>
+                                    </ul>
+                                 </div>
+                                 <button class="btn btn-primary full-width mt-3" id="b1">
+                                    Start the work
+                                 </button>
+                              </div>
+                           </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                    
+                 </div>
+                 <div class="tab" tab-id="3">
+         
+                  <div class="container pb-4">
+                     <div class="row">
+                        <div class="col-8 right">
+
+                           <div class="box shadow-sm rounded bg-white mb-3">
+                              <div class="box-title border-bottom p-3">
+                                 <h6 class="m-0">Files</h6>
+                              </div>
+                              <div class="box-body p-0">
+                                 <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header">
+                                    <div class="dropdown-list-image mr-3">
+                                       <img class="rounded-circle" src="images/loggo.png" alt="">
+                                    </div>
+                                    <div class="font-weight-bold mr-3">
+                                       <div class="text-truncate">Withdraw 300 SR via your Paypal account.</div>
+                                    </div>
+                                    <span class="mr-auto mb-auto">
+                                       <div class="btn-group">
+                                          <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="mdi mdi-dots-vertical"></i>
+                                          </button>
+                                          <div class="dropdown-menu dropdown-menu-left">
+                                             <a href="invoice.html"><button class="dropdown-item" type="button">Invoice</button></a>
+                                          </div>
+                                       </div>
+                                       <br>
+                                       <div class="text-right text-muted pt-1">3 Days</div>
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                        <div class="col-lg-4 left">
+                           <div class="sticky">
+                           <div class="profile_info">
+                              <div class="seller-card">
+                                 <h4>Service info</h4>
+                                 <div class="user-stats-desc">
+                                    <style>
+                                       .user-stats li{
+                                          margin-right: -20px;
+                                       }
+                                    </style>
+                                    <ul class="user-stats">
+                                       <li class="">Price <strong>2000 SR</strong></li>
+                                       <li class=""><span class="mt-2">Service type</span> <strong>
+                                          <button type="button" class="btn btn-primary">Premium </button></strong></li>
+                                    </ul>
+                                 </div>
+                                 <button class="btn btn-primary full-width mt-3" id="b1">
+                                    Start the work
+                                 </button>
+                              </div>
+                           </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                    
+                 </div>
+                 <div class="tab" tab-id="4">
+         
+                  <div class="container pb-4">
+                  <div class="row">
+                     <div class="col-8 right">
+                        <div class="box shadow-sm rounded bg-white mb-3">
+                           <div class="box-title border-bottom p-3">
+                              <h6 class="m-0">Reviews</h6>
+                           </div>
+                           <div class="box-body p-0">
+                              <div class="p-3  align-items-center bg-light border-bottom ">
+                                 <center>
+                                    <img src="images/no-message.svg" class="single-message-no-img " alt="">
+                                    <h5 class="align-items-center mt-4 "><b>There is no reviews yet to see.</b></h5>
+                                 </center>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 left">
+                        <div class="sticky">
+                        <div class="profile_info">
+                           <div class="seller-card">
+                              <h4>Service info</h4>
+                              <div class="user-stats-desc">
+                                 <style>
+                                    .user-stats li{
+                                       margin-right: -20px;
+                                    }
+                                 </style>
+                                 <ul class="user-stats">
+                                    <li class="">Price <strong>2000 SR</strong></li>
+                                    <li class=""><span class="mt-2">Service type</span> <strong>
+                                       <button type="button" class="btn btn-primary">Premium </button></strong></li>
+                                 </ul>
+                              </div>
+                              <button class="btn btn-primary full-width mt-3" id="b1">
+                                 Start the work
+                              </button>
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+                    
+                 </div>
+               </div>
+             </div>
+
+         </div>
+      </section>
+      <!-- End Inner Header -->
+
+      
+
+      
+
+
+      <!--       footer -->
+      <footer class="bg-white bg-black-footer">
+        <div class="container">
+           <div class="d-flex justify-content-between">
+              <div class="footer-list">
+                 <div class="footer-list-img-1 mofidon-footer">
+                    
+                 </div>
+                 <div class="footer-list-img-2">
+                    
+                 </div>
+              </div>
+              <div class="footer-list">
+                 
+              </div>
+              <div class="footer-list">
+                 <h2>Mofidon</h2>
+                 <ul class="list">
+                    <li><a href="about.html">About Mofidon</a></li>
+                    <li><a href="blogs.html">Mofidon guidnce</a></li>
+                    <li><a href="help.html">Help & support</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                 </ul>
+              </div>
+              <div class="footer-list">
+                 <h2>Important links</h2>
+                 <ul class="list">
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="terms.html">Terms & conditions</a></li>
+                    <li><a href="privacy.html">Privacy & Policy</a></li>
+                    <li><a href="refund.html">Refund policy</a></li>
+                 </ul>
+              </div>
+              <div class="footer-list">
+                 <h2>Information</h2>
+                 <ul class="list">
+                    <li><a href="marketing.html">About Marketing</a></li>
+                    <li><a href="sitemap.html">Site map</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="copyright">
+              <ul class="social">
+                 <li>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                 </li>
+              </ul>
+              <p>Copyright - Mofidon 2021
+              </p>
+              <b class="copyright-p"> 20333 Mofid available |  <i class="fa fa-fw fa-users"></i>
+              </b>
+              <b style="margin-left: 15px;" class="copyright-p"> Services available | 300011 	&nbsp;<i class="fa fa-fw fa-handshake-o"></i>
+              </b>
+           </div>
+        </div>
+     </footer>
+     <!--       footer-->
+
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Contact form JavaScript -->
+      <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <script src="js/jqBootstrapValidation.js"></script>
+      <script src="js/contact_me.js"></script>
+      <!-- Slick -->
+      <script src="vendor/slick-master/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+      <!-- lightgallery -->
+      <script src="vendor/lightgallery-master/dist/js/lightgallery-all.min.js"></script>
+      <!-- select2 Js -->
+      <script src="vendor/select2/js/select2.min.js"></script>
+      <!-- Custom -->
+      <script src="js/custom.js"></script>
+      <script src="js/dark.js"></script>
+	  <!-- jquery file uploader -->
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.ui.widget.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.fileupload.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.iframe-transport.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.fancy-fileupload.js"></script>
+      <script type="text/javascript">
+        $('#demo').FancyFileUpload({
+            params : {
+              action : 'fileuploader'
+            },
+            url :'',
+            maxfilesize : 9000000
+          });
+         
+
+      </script>
+      <script type="">   
+      
+      $(function(){
+         $("#checkInToggleSystem").click(function () {
+          $("#div1").toggleClass("display-none");    
+          $("#div2").toggleClass("display-inline");
+           // change label
+          if ($(this).text() == "Mofid") 
+          { 
+             $(this).text("Project Manager"); 
+          } 
+          else 
+          { 
+             $(this).text("Mofid"); 
+          }; 
+         });
+      })
+      
+
+      </script>
+
+      <script>
+      
+      $(document).ready(function () {
+      $(document).on('click','#b1',function (e) {
+	 e.preventDefault();
+           swal({
+             title: "Are you sure you want to start the work?",
+             text: "",
+             type: "success",
+             showCancelButton: true,
+             confirmButtonColor: '#DD6B55',
+             confirmButtonText: 'Start',
+             cancelButtonText: "Cancel",
+             closeOnConfirm: false,
+             closeOnCancel: true
+           },
+           function(isConfirm){
+             if (isConfirm){
+               swal("Submitted!", "Request submitted successfully", "success");
+             } else {
+               swal("Cancelled", "Request is failed)", "error");
+             }
+           });
+           });
+         
+         // Intial Border Position
+         var activePos = $('.tabs-header .active').position();
+       
+         // Change Position
+         function changePos() {
+       
+           // Update Position
+           activePos = $('.tabs-header .active').position();
+       
+           // Change Position & Width
+           $('.border').stop().css({
+             left: activePos.left,
+             width: $('.tabs-header .active').width()
+           });
+         }
+       
+         changePos();
+       
+         // Intial Tab Height
+         var tabHeight = $('.tab.active').height();
+       
+         // Animate Tab Height
+         function animateTabHeight() {
+       
+           // Update Tab Height
+           tabHeight = $('.tab.active').height();
+       
+           // Animate Height
+           $('.tabs-content').stop().css({
+             height: tabHeight + 'px'
+           });
+         }
+       
+         animateTabHeight();
+       
+         // Change Tab
+         function changeTab() {
+           var getTabId = $('.tabs-header .active a').attr('tab-id');
+       
+           // Remove Active State
+           $('.tab').stop().fadeOut(300, function () {
+             // Remove Class
+             $(this).removeClass('active');
+           }).hide();
+       
+           $('.tab[tab-id=' + getTabId + ']').stop().fadeIn(300, function () {
+             // Add Class
+             $(this).addClass('active');
+       
+             // Animate Height
+             animateTabHeight();
+           });
+         }
+       
+         // Tabs
+         $('.tabs-header a').on('click', function (e) {
+           e.preventDefault();
+       
+           // Tab Id
+           var tabId = $(this).attr('tab-id');
+       
+           // Remove Active State
+           $('.tabs-header a').stop().parent().removeClass('active');
+       
+           // Add Active State
+           $(this).stop().parent().addClass('active');
+       
+           changePos();
+       
+           // Update Current Itm
+           tabCurrentItem = tabItems.filter('.active');
+       
+           // Remove Active State
+           $('.tab').stop().fadeOut(300, function () {
+             // Remove Class
+             $(this).removeClass('active');
+           }).hide();
+       
+           // Add Active State
+           $('.tab[tab-id="' + tabId + '"]').stop().fadeIn(300, function () {
+             // Add Class
+             $(this).addClass('active');
+       
+             // Animate Height
+             animateTabHeight();
+           });
+         });
+       
+         // Tab Items
+         var tabItems = $('.tabs-header ul li');
+       
+         // Tab Current Item
+         var tabCurrentItem = tabItems.filter('.active');
+       
+         // Next Button
+         $('#next').on('click', function (e) {
+           e.preventDefault();
+       
+           var nextItem = tabCurrentItem.next();
+       
+           tabCurrentItem.removeClass('active');
+       
+           if (nextItem.length) {
+             tabCurrentItem = nextItem.addClass('active');
+           } else {
+             tabCurrentItem = tabItems.first().addClass('active');
+           }
+       
+           changePos();
+           changeTab();
+         });
+       
+         // Prev Button
+         $('#prev').on('click', function (e) {
+           e.preventDefault();
+       
+           var prevItem = tabCurrentItem.prev();
+       
+           tabCurrentItem.removeClass('active');
+       
+           if (prevItem.length) {
+             tabCurrentItem = prevItem.addClass('active');
+           } else {
+             tabCurrentItem = tabItems.last().addClass('active');
+           }
+       
+           changePos();
+           changeTab();
+         });
+       
+         // Ripple
+         $('[ripple]').on('click', function (e) {
+           var rippleDiv = $('<div class="ripple" />'),
+             rippleOffset = $(this).offset(),
+             rippleY = e.pageY - rippleOffset.top,
+             rippleX = e.pageX - rippleOffset.left,
+             ripple = $('.ripple');
+       
+           rippleDiv.css({
+             top: rippleY - (ripple.height() / 2),
+             left: rippleX - (ripple.width() / 2),
+             background: $(this).attr("ripple-color")
+           }).appendTo($(this));
+       
+           window.setTimeout(function () {
+             rippleDiv.remove();
+           }, 1500);
+         });
+       });
+         
+      </script>
+
+      <script>
+
+         var stepNumber = $("#stepNumber");
+         var title = $("#HTML-title");
+         var desc = $("#HTML-desc");
+         
+         function hello(a,b,c) {
+           var updateContent = function() {
+             stepNumber.html(a);
+             title.html(b);
+             desc.html(c);
+           }
+           
+           var tl = new TimelineMax();
+           tl.to(stepNumber, 1, {ease: Power4.easeOut, opacity: 0})
+           .to(title, 1, {ease: Power4.easeOut, opacity: 0}, "-=0.80")
+           .to(desc, 1, {ease: Power4.easeOut, opacity: 0}, "-=0.80")
+           .call(updateContent)
+           .to(stepNumber, 0, {ease: Power4.easeOut, y: 60})
+           .to(title, 0, {ease: Power4.easeOut, y: 60})
+           .to(desc, 0, {ease: Power4.easeOut, y: 60})
+           .to(stepNumber, 1, {ease: Power4.easeOut, opacity: 1, y:0})
+           .to(title, 1, {ease: Power4.easeOut, opacity: 1, y:0}, "-=0.8")
+           .to(desc, 1.4, {ease: Power4.easeOut, opacity: 1, y:0}, "-=0.8")
+           tl.timeScale(3);
+           return tl;
+         };
+         
+         
+         
+         var listMe = document.querySelectorAll("svg g#Sections path"); 
+         
+         listMe.forEach(function(element) {
+             element.onclick = function(event) {
+               let hotpie = document.getElementsByClassName("active");
+               while (hotpie.length)
+                 hotpie[0].classList.remove("active");
+               event.target.classList.add("active");
+              var pieSlice = element.id - 1;
+               
+              let stepText = ratingSteps.step[pieSlice].stepNumber;
+              let titleText = ratingSteps.step[pieSlice].title;
+              let descText = ratingSteps.step[pieSlice].desc;
+         
+              hello(stepText, titleText, descText);
+              
+              // document.querySelector("#stepNumber").innerText = ratingSteps.step[pieSlice].stepNumber;
+              // document.querySelector("#HTML-title").innerText = ratingSteps.step[pieSlice].title;
+              // document.querySelector("#HTML-desc").innerText = ratingSteps.step[pieSlice].desc;
+           };
+         });
+         
+         
+         
+          // .add{$("#stepNumber").html(title)}
+         
+         
+         
+         
+         
+         
+         
+         var ratingSteps = { 
+           "step" : [
+           {
+             "index": 0,
+             "stepNumber": "Step 1",
+             "phase": "Professional Service",
+             "title": "Initiate rating process",
+             "desc": "Determination of whether additional industry analyst expertise is required.\nPrimary and back-up analyst assigned.\nAnalysts have a range of backgrounds, with the majority recruited from banks, insurance companies, investment houses & financial departments of major companies.",
+             "point2": "Determination of whether additional industry analyst expertise is required",
+             "point3": "Analysts have a range of backgrounds, with the majority recruited from banks, insurance companies, investment houses & financial departments of major companies",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 1,
+             "stepNumber": "Step 2",
+             "phase": "Professional Service",
+             "title": "Collect publicly available information",
+             "desc": "Company financial & operational statistics.\nReports filed with regulatory agencies.\nIndustry & economic reports.\nOther data & insights.",
+             "point2": "Reports filed with regulatory agencies",
+             "point3": "Industry & economic reports",
+             "point4": "Other data & insights",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 2,
+             "stepNumber": "Step 3",
+             "phase": "Thorough Pre-analysis",
+             "title": "Perform pre-analysis & request non-public information, if appropriate",
+             "desc": "Information provided directly by the issuer, arranger, sponsor or other involved party. Can include background data, forecasts & other communications",
+             "point2": "Can include background data, forecasts & other communications",
+             "point3": "",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 3,
+             "stepNumber": "Step 4",
+             "phase": "Thorough Pre-analysis",
+             "title": "Prepare detailed questionnaire",
+             "desc": "Prepare main topics for discussion & key questions. Establish detailed agenda to ensure productive dialogue",
+             "point2": "Establish detailed agenda to ensure productive dialogue",
+             "point3": "",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 4,
+             "stepNumber": "Step 5",
+             "phase": "Independent Perspective",
+             "title": "Hold meeting with entity management & other stakeholder",
+             "desc": "Face-to-face meetings, site visit and/or teleconference, when appropriate",
+             "point2": "",
+             "point3": "",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 5,
+             "stepNumber": "Step 6",
+             "phase": "Independent Perspective",
+             "title": "Perform in-depth analysis",
+             "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, aliquid repudiandae alias ea asperiores assumenda explicabo doloribus laboriosam!",
+             "point2": "",
+             "point3": "",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 6,
+             "stepNumber": "Step 7",
+             "phase": "Independent Perspective",
+             "title": "Draft Report",
+             "desc": "Qui aspernatur assumenda blanditiis possimus consequatur asperiores ex reprehenderit fugiat, deserunt inventore!",
+             "point2": "",
+             "point3": "",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 7,
+             "stepNumber": "Step 8",
+             "phase": "Transparent Methodology",
+             "title": "Hold ratings committee",
+             "desc": "Committee members review package.\nInformation considered.\nConsensus decision on appropriate rating, including, where appropriate, a Rating Outlook or Rating Watch designation.\nMinimum size for committee is four analysts.\nCommittees frequently include analysts from outside the immediate asset class, sub-sector or geography since peer analysis is a central element of the process.\nCommittee considers relevant quantitative & qualitative issues.",
+             "point2": "Information considered",
+             "point3": "Consensus decision on appropriate rating, including, where appropriate, a Rating Outlook or Rating Watch designation",
+             "point4": "Minimum size for committee is four analysts",
+             "point5": "Committees frequently include analysts from outside the immediate asset class, sub-sector or geography since peer analysis is a central element of the process",
+             "point6": "Committee considers relevant quantitative & qualitative issues"
+           },
+           {
+             "index": 8,
+             "stepNumber": "Step 9",
+             "phase": "Transparent Methodology",
+             "title": "Assign ratings write & publish commentary",
+             "desc": "Once prepared, report is shown to issuer to check for factual accuracy and presence of non-public information.\nInitial ratings actions.\nReport published.\nCommentary distributed.",
+             "point2": "Initial ratings actions",
+             "point3": "Report published",
+             "point4": "Commentary distributed",
+             "point5": "",
+             "point6": ""
+           },
+           {
+             "index": 9,
+             "stepNumber": "Step 10",
+             "phase": "Ongoing Surveillance",
+             "title": "Conduct ongoing surveillance",
+             "desc": "Continual review of market events.\nFormalized periodic review.\nContinuing evaluation of industry issues & macro economic considerations.",
+             "point2": "Formalized periodic review",
+             "point3": "Continuing evaluation of industry issues & macro economic considerations",
+             "point4": "",
+             "point5": "",
+             "point6": ""
+           }
+         ]
+           
+         };
+         
+      </script>
+
+
+      <script>
+      
+       
+         document.getElementById('b1').onclick = function(){
+           swal({
+             title: "Are you sure?",
+             text: "You will not be able to recover this imaginary file!",
+             type: "warning",
+             showCancelButton: true,
+             confirmButtonColor: '#DD6B55',
+             confirmButtonText: 'Yes, delete it!',
+             closeOnConfirm: false,
+             //closeOnCancel: false
+           },
+           function(){
+             swal("Deleted!", "Your imaginary file has been deleted!", "success");
+           });
+         };
+         
+         // document.getElementById('b2').onclick = function(){
+         //   swal({
+         //     title: "Are you sure?",
+         //     text: "You will not be able to recover this imaginary file!",
+         //     type: "warning",
+         //     showCancelButton: true,
+         //     confirmButtonColor: '#DD6B55',
+         //     confirmButtonText: 'Yes, delete it!',
+         //     cancelButtonText: "No, cancel plx!",
+         //     closeOnConfirm: false,
+         //     closeOnCancel: false
+         //   },
+         //   function(isConfirm){
+         //     if (isConfirm){
+         //       swal("Deleted!", "Your imaginary file has been deleted!", "success");
+         //     } else {
+         //       swal("Cancelled", "Your imaginary file is safe :)", "error");
+         //     }
+         //   });
+         // };
+         
+         // document.getElementById('b3').onclick = function(){
+         //   swal({
+         //     title: "Are you sure?",
+         //     text: "You will not be able to recover this imaginary file!",
+         //     type: "warning",
+         //     showCancelButton: true,
+         //     confirmButtonColor: '#DD6B55',
+         //     confirmButtonText: 'Yes, delete it!',
+         //     cancelButtonText: "No, cancel plx!",
+         //     closeOnConfirm: false,
+         //     closeOnCancel: false
+         //   },
+         //   function(isConfirm){
+         //     if (isConfirm){
+         //       swal("Deleted!", "Your imaginary file has been deleted!", "success");
+         //     } else {
+         //       swal("Cancelled", "Your imaginary file is safe :)", "error");
+         //     }
+         //   });
+         // };
+         
+         // document.getElementById('b4').onclick = function(){
+         //   swal({
+         //     title: "Are you sure?",
+         //     text: "You will not be able to recover this imaginary file!",
+         //     type: "warning",
+         //     showCancelButton: true,
+         //     confirmButtonColor: '#DD6B55',
+         //     confirmButtonText: 'Yes, delete it!',
+         //     cancelButtonText: "No, cancel plx!",
+         //     closeOnConfirm: false,
+         //     closeOnCancel: false
+         //   },
+         //   function(isConfirm){
+         //     if (isConfirm){
+         //       swal("Deleted!", "Your imaginary file has been deleted!", "success");
+         //     } else {
+         //       swal("Cancelled", "Your imaginary file is safe :)", "error");
+         //     }
+         //   });
+         // };
+         
+           
+        </script>
+
+
+       <!-- New section -->
+       <script>
+         /*----------------------------------------------------------------------------//
+         entree id value is on ID:entree-id
+         date value is on ID:entree-date
+         
+         ------------------------------------------------------------------------------*/
+         //this 1st section is not mine///
+         (function(b) {
+           var c = {
+             allowFloat: false,
+             allowNegative: false
+           };
+           b.fn.numericInput = function(e) {
+             var f = b.extend({}, c, e);
+             var d = f.allowFloat;
+             var g = f.allowNegative;
+             this.keypress(function(j) {
+               var i = j.which;
+               var h = b(this).val();
+               if (i > 0 && (i < 48 || i > 57)) {
+                 if (d == true && i == 46) {
+                   if (g == true && a(this) == 0 && h.charAt(0) == "-") {
+                     return false
+                   }
+                   if (h.match(/[.]/)) {
+                     return false
+                   }
+                 } else {
+                   if (g == true && i == 45) {
+                     if (h.charAt(0) == "-") {
+                       return false
+                     }
+                     if (a(this) != 0) {
+                       return false
+                     }
+                   } else {
+                     if (i == 8) {
+                       return true
+                     } else {
+                       return false
+                     }
+                   }
+                 }
+               } else {
+                 if (i > 0 && (i >= 48 && i <= 57)) {
+                   if (g == true && h.charAt(0) == "-" && a(this) == 0) {
+                     return false
+                   }
+                 }
+               }
+             });
+             return this
+           };
+         
+           function a(d) {
+             if (d.selectionStart) {
+               return d.selectionStart
+             } else {
+               if (document.selection) {
+                 d.focus();
+                 var f = document.selection.createRange();
+                 if (f == null) {
+                   return 0
+                 }
+                 var e = d.createTextRange(),
+                 g = e.duplicate();
+                 e.moveToBookmark(f.getBookmark());
+                 g.setEndPoint("EndToStart", e);
+                 return g.text.length
+               }
+             }
+             return 0
+           }
+         });
+         //^^ not mine//
+         
+         
+         $(document).ready(function() {
+         
+           inputhighlight();
+           
+
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 // update totals on "change" //
+           $("input").change(function(){
+             btn_t_update();
+           })
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                       // changes inputs to display decimals at all times//
+           $(document).on('blur',"input[type='number']",function(){
+             if ($(this).val() != "" ) {
+               $(this).val(parseFloat($(this).val()).toFixed(2));
+             }
+           });
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               //requests account dropdown options//
+           $.post("/oop/includes/select_chart_of_accounts.php",
+           {select_account : "true"},function(response){
+             $(".select_account, #select_account").html(response);
+           });
+           
+         });
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               /// highlight row on input focus ///
+         function inputhighlight() {
+           $('.row-input-group').focus(function() {
+             $(this).closest('tr').addClass('active');
+           });
+           $('.row-input-group').blur(function() {
+             $(this).closest('tr').removeClass('active');
+           });
+         };
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 ///creates a new row in table///
+         function newRow() {
+           var tr_s = "<tr name='entree-row' class='entree-row '>";
+           var tr_btn_s = "<tr class='button-row'>";
+           var tr_e = "</tr>";
+           var account_in_s = '';
+           var select_account = $("#select_account").html();
+           var row_insert = $("#row_insert").html();
+           var select_account_e = '</select></td>';
+           var credit_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right"  placeholder="..أكتب جوابك هنا"></td>';
+           var debit_in = '';
+           var memo_in = '<td><input type="text" name="name"  class="form-control full-width font-weight-bold text-muted right" placeholder="..أكتب سؤالك هنا"></td>';
+           var add_button = '<button onClick="newRow();" class="pure-button  new-row-btn " style="display:inline-block;text-align:center;">Add New <i style="color:white;"class="fa fa-plus" aria-hidden="true"></i></button>';
+           var remove_button = '<td><button tabindex = "-1" class="pure-button remove-btn"><i style="color:white;" class="fa fa-times" aria-hidden="true"></i></button></td>';
+           ///removes row with add button/// 
+           $(".button-row").remove();
+           ///adds row with inputs and last row with add button///
+           $("#journal-entrees .row-body").append(tr_s+account_in_s+select_account+select_account_e+debit_in+credit_in+memo_in+remove_button+tr_e+tr_btn_s+add_button+tr_e);
+           ///enables focus highlight on new rows///
+           inputhighlight();
+         };
+         function newRow2() {
+           var tr_s = "<tr name='entree-row' class='entree-row '>";
+           var tr_btn_s = "<tr class='button-row'>";
+           var tr_e = "</tr>";
+           var account_in_s = '';
+           var select_account = $("#select_account").html();
+           var row_insert = $("#row_insert").html();
+           var select_account_e = '</select></td>';
+           var credit_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right"  placeholder="..أكتب جوابك هنا"></td>';
+           var debit_in = '';
+           var memo_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right" placeholder="..أكتب سؤالك هنا"></td>';
+           var add_button = '<button onClick="newRow2();" class="pure-button  new-row-btn " style="display:inline-block;text-align:center;">Add New <i style="color:white;"class="fa fa-plus" aria-hidden="true"></i></button>';
+           var remove_button = '<td><button tabindex = "-1" class="pure-button remove-btn"><i style="color:white;" class="fa fa-times" aria-hidden="true"></i></button></td>';
+           ///removes row with add button/// 
+           $(".button-row").remove();
+           ///adds row with inputs and last row with add button///
+           $("#journal-entrees2 .row-body").append(tr_s+account_in_s+select_account+select_account_e+debit_in+credit_in+memo_in+remove_button+tr_e+tr_btn_s+add_button+tr_e);
+           ///enables focus highlight on new rows///
+           inputhighlight();
+         };
+         function newRow3() {
+           var tr_s = "<tr name='entree-row' class='entree-row '>";
+           var tr_btn_s = "<tr class='button-row'>";
+           var tr_e = "</tr>";
+           var account_in_s = '';
+           var select_account = $("#select_account").html();
+           var row_insert = $("#row_insert").html();
+           var select_account_e = '</select></td>';
+           var credit_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right"  placeholder="..أكتب جوابك هنا"></td>';
+           var debit_in = '';
+           var memo_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right" placeholder="..أكتب سؤالك هنا"></td>';
+           var add_button = '<button onClick="newRow3();" class="pure-button  new-row-btn " style="display:inline-block;text-align:center;">Add New <i style="color:white;"class="fa fa-plus" aria-hidden="true"></i></button>';
+           var remove_button = '<td><button tabindex = "-1" class="pure-button remove-btn"><i style="color:white;" class="fa fa-times" aria-hidden="true"></i></button></td>';
+           ///removes row with add button/// 
+           $(".button-row").remove();
+           ///adds row with inputs and last row with add button///
+           $("#journal-entrees3 .row-body").append(tr_s+account_in_s+select_account+select_account_e+debit_in+credit_in+memo_in+remove_button+tr_e+tr_btn_s+add_button+tr_e);
+           ///enables focus highlight on new rows///
+           inputhighlight();
+         };
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 ///Remove a row with X button ///
+         $('#journal-entrees').on('click','button',function(e) {
+           $(this).closest('tr').remove();
+           btn_t_update();
+         });
+         $('#journal-entrees2').on('click','button',function(e) {
+           $(this).closest('tr').remove();
+           btn_t_update();
+         });
+         $('#journal-entrees3').on('click','button',function(e) {
+           $(this).closest('tr').remove();
+           btn_t_update();
+         });
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                         ///close window//
+         function close_window(url) {
+           var newWindow = window.open('','_self',''); //open the current window
+           window.close(url);
+         }
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               //update totals when removing a row//
+         function btn_t_update() {
+           var d_totals="debit_in";
+           var c_totals="credit_in";
+           update_in(d_totals);
+           update_in(c_totals);
+         }
+         
+         // $(".remove-btn").click(function( event ) {
+         //   event.preventDefault();
+         // });
+         
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                             //update value totals on input changes//
+         function update_in(name) {
+           var taskArray=new Array();
+           $("input[name*='"+name+"']").each(function() {
+             if ($(this).val()) {
+               taskArray.push($(this).val());
+             }
+           });
+           var result = taskArray.map(function(x) {
+             return parseFloat(x,".");
+           });
+           var sum=result.reduce(function(a,b) {
+             return a+b;
+           },0);
+           var sum=sum.toFixed(2);
+           $("#total_"+name).text(sum);
+           $("#total_"+name).formatCurrency();
+           balanceTotals();
+           $("input[name='testIndex[]']").val(sum);
+         }
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 /// Format Curency function ///
+         (function($) {
+           $.formatCurrency={};
+           $.formatCurrency.regions=[];
+           $.formatCurrency.regions[""]= {
+             symbol: "$",
+             positiveFormat: "%s%n",
+             negativeFormat: "(%s%n)",
+             decimalSymbol: ".",
+             digitGroupSymbol: ",",
+             groupDigits: true
+           };
+           $.fn.formatCurrency = function(destination, settings) {
+             if (arguments.length == 1 && typeof destination !== "string") {
+               settings = destination;
+               destination = false
+             }
+             var defaults = {
+               name: "formatCurrency",
+               colorize: false,
+               region: "",
+               global: true,
+               roundToDecimalPlace: 2,
+               eventOnDecimalsEntered: false
+             };
+             defaults = $.extend(defaults, $.formatCurrency.regions[""]);
+             settings = $.extend(defaults, settings);
+             if (settings.region.length > 0) {
+               settings = $.extend(settings, getRegionOrCulture(settings.region))
+             }
+             settings.regex = generateRegex(settings);
+             return this.each(function() {
+               $this = $(this);
+               var num = "0";
+               num = $this[$this.is("input, select, textarea") ? "val" : "html"]();
+               if (num.search("\\(") >= 0) {
+                 num = "-" + num
+               }
+               if (num === "" || (num === "-" && settings.roundToDecimalPlace === -1)) {
+                 return
+               }
+               if (isNaN(num)) {
+                 num = num.replace(settings.regex, "");
+                 if (num === "" || (num === "-" && settings.roundToDecimalPlace === -1)) {
+                   return
+                 }
+                 if (settings.decimalSymbol != ".") {
+                   num = num.replace(settings.decimalSymbol, ".")
+                 }
+                 if (isNaN(num)) {
+                   num = "0"
+                 }
+               }
+               var numParts = String(num).split(".");
+               var isPositive = (num == Math.abs(num));
+               var hasDecimals = (numParts.length > 1);
+               var decimals = (hasDecimals ? numParts[1].toString() : "0");
+               var originalDecimals = decimals;
+               num = Math.abs(numParts[0]);
+               num = isNaN(num) ? 0 : num;
+               if (settings.roundToDecimalPlace >= 0) {
+                 decimals = parseFloat("1." + decimals);
+                 decimals = decimals.toFixed(settings.roundToDecimalPlace);
+                 if (decimals.substring(0, 1) == "2") {
+                   num = Number(num) + 1
+                 }
+                 decimals = decimals.substring(2)
+               }
+               num = String(num);
+               if (settings.groupDigits) {
+                 for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {
+                   num = num.substring(0, num.length - (4 * i + 3)) + settings.digitGroupSymbol + num.substring(num.length - (4 * i + 3))
+                 }
+               }
+               if ((hasDecimals && settings.roundToDecimalPlace == -1) || settings.roundToDecimalPlace > 0) {
+                 num += settings.decimalSymbol + decimals
+               }
+               var format = isPositive ? settings.positiveFormat : settings.negativeFormat;
+               var money = format.replace(/%s/g, settings.symbol);
+               money = money.replace(/%n/g, num);
+               var $destination = $([]);
+               if (!destination) {
+                 $destination = $this
+               } else {
+                 /* global $this */
+                 $destination = $(destination)
+               }
+               $destination[$destination.is("input, select, textarea") ? "val" : "html"](money);
+               if (hasDecimals && settings.eventOnDecimalsEntered && originalDecimals.length > settings.roundToDecimalPlace) {
+                 $destination.trigger("decimalsEntered", originalDecimals)
+               }
+               if (settings.colorize) {
+                 $destination.css("color", isPositive ? "black" : "red")
+               }
+             })
+           };
+           
+           $.fn.toNumber = function(settings) {
+             var defaults = $.extend({
+               name: "toNumber",
+               region: "",
+               global: true
+             }, $.formatCurrency.regions[""]);
+             settings = jQuery.extend(defaults, settings);
+             if (settings.region.length > 0) {
+               settings = $.extend(settings, getRegionOrCulture(settings.region))
+             }
+             settings.regex = generateRegex(settings);
+             return this.each(function() {
+               var method = $(this).is("input, select, textarea") ? "val" : "html";
+               $(this)[method]($(this)[method]().replace("(", "(-").replace(settings.regex, ""))
+             })
+           };
+           
+           $.fn.asNumber = function(settings) {
+             var defaults = $.extend({
+               name: "asNumber",
+               region: "",
+               parse: true,
+               parseType: "Float",
+               global: true
+             }, $.formatCurrency.regions[""]);
+             settings = jQuery.extend(defaults, settings);
+             if (settings.region.length > 0) {
+               settings = $.extend(settings, getRegionOrCulture(settings.region))
+             }
+             settings.regex = generateRegex(settings);
+             settings.parseType = validateParseType(settings.parseType);
+             var method = $(this).is("input, select, textarea") ? "val" : "html";
+             var num = $(this)[method]();
+             num = num ? num : "";
+             num = num.replace("(", "(-");
+             num = num.replace(settings.regex, "");
+             if (!settings.parse) {
+               return num
+             }
+             if (num.length == 0) {
+               num = "0"
+             }
+             if (settings.decimalSymbol != ".") {
+               num = num.replace(settings.decimalSymbol, ".")
+             }
+             return window["parse" + settings.parseType](num)
+           };
+           
+           function getRegionOrCulture(region) {
+             var regionInfo = $.formatCurrency.regions[region];
+             if (regionInfo) {
+               return regionInfo
+             } else {
+               if (/(\w+)-(\w+)/g.test(region)) {
+                 var culture = region.replace(/(\w+)-(\w+)/g, "$1");
+                 return $.formatCurrency.regions[culture]
+               }
+             }
+             return null
+           }
+           
+           function validateParseType(parseType) {
+             switch (parseType.toLowerCase()) {
+               case "int":
+                 return "Int";
+               case "float":
+                 return "Float";
+               default:
+                 throw "invalid parseType"
+             }
+           }
+           
+           function generateRegex(settings) {
+             if (settings.symbol === "") {
+               return new RegExp("[^\\d" + settings.decimalSymbol + "-]", "g")
+             } else {
+               var symbol = settings.symbol.replace("$", "\\$").replace(".", "\\.");
+               return new RegExp(symbol + "|[^\\d" + settings.decimalSymbol + "-]", "g")
+             }
+           }
+           /* global jQuery */
+         })(jQuery);
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                   /// datapicker function ///
+         // $(function() {
+         //  $(".date").datepicker(
+         //    {dateFormat:"yy-mm-dd"}
+         //    ,"option"
+         //    ,"showAnim"
+         //    ,"fadeIn"
+         //  );
+         // });  
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+         /* global $*/                     /// submit function ///
+         function saveEntree(){
+           var rows=$(".entree-row").length++;
+           var entreeId=$("#entree-id").val();
+           var date=$("#entree-date").val();
+           var rowEntree=new Array();
+           var entree_info={"entreeId":entreeId,"date":date};
+           for(var row_id=0;row_id<rows;row_id++){
+             rowEntree[row_id]=row_id; 
+           }
+           for(var i=0;i<rowEntree.length;i++){
+             var row=i;
+             var acct=$("tr.entree-row:eq("+i+") select[name='account_in']").val();  
+             var debit=$("tr.entree-row:eq("+i+") input[name='debit_in']").val();
+             var credit=$("tr.entree-row:eq("+i+") input[name='credit_in']").val();
+             var memo=$("tr.entree-row:eq("+i+") input[name='memo_in']").val();  
+         //--/--/--/--/ if values are null.../--/--/--//
+             if(debit=="") {
+               debit=0.00;
+             }
+             if(credit=="") {
+               credit=0.00;
+             }
+             if (memo=="") {
+               memo="no memo";
+             }
+             rowEntree[i]= {"acct": acct,"Debit": debit,"credit":credit,"memo":memo };
+           }
+         //--//places entryid and date at first array index //
+           rowEntree.unshift(entree_info);
+         //--// post to server side //
+           $.ajax('ajax/journal_entries.php', {
+               type: 'post',
+               data: JSON.stringify(rowEntree),
+               dataType: 'json',
+               contentType: 'application/json',
+               success: function(data) {$("#alert-msg").html(rows+" journal entries were submitted. <i class=\"fa fa-check-circle alert-success \" aria-hidden=\"true\"></i>").removeClass().addClass("alert-success text-center"); }
+           });
+         }
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               /// highlight function for totals ///
+         function balanceTotals() {
+           var total_debit = "#total_debit_in";
+           var total_credit = "#total_credit_in";
+           var credit = $(total_credit).text();
+           var debit = $(total_debit).text();
+           var msg_01 = "Oops! Something is not right, credit amount is less than debit amount!  "+ "<i class=\"fa fa-exclamation-triangle alert-warning\" aria-hidden=\"true\"></i> ";
+           var msg_02 = "Oops! Something is not right, debit amount is greater than debit amount!  "+ "<i class=\"fa fa-exclamation-triangle alert-warning\" aria-hidden=\"true\"></i>";
+           var msg_03 = "You're good!  "+ "<i class=\"fa fa-check-circle alert-success \" aria-hidden=\"true\"></i>";
+           var alert_container = "#alert-msg";
+           var cl_b_danger = "balance-danger text-center";
+           var cl_b_warning = "balance-warning text-center";
+           var cl_a_warning = "alert-warning text-center";
+           var cl_b_success = "balance-success text-center";
+           var cl_a_success = "alert-success text-center";
+           if (credit < debit){
+             $(total_credit).removeClass().addClass(cl_b_danger);
+             $(total_debit).removeClass().addClass(cl_b_warning);
+             // $(alert_container).html(msg_01).removeClass().addClass(cl_a_warning);
+           } else if (credit > debit){
+             $(total_credit).removeClass().addClass(cl_b_warning);
+             $(total_debit).removeClass().addClass(cl_b_danger);
+             // $(alert_container).html(msg_02).removeClass().addClass(cl_a_warning);
+           } else if (credit == debit){
+             $(total_credit).removeClass().addClass(cl_b_success);
+             $(total_debit).removeClass().addClass(cl_b_success);
+             // $(alert_container).html(msg_03).removeClass().addClass(cl_a_success);
+           }
+         }
+
+      </script>
+
+      <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+      
+          var reader = new FileReader();
+      
+          reader.onload = function(e) {
+            $('.image-upload-wrap').hide();
+      
+            $('.file-upload-image').attr('src', e.target.result);
+            $('.file-upload-content').show();
+      
+            $('.image-title').html(input.files[0].name);
+          };
+      
+          reader.readAsDataURL(input.files[0]);
+      
+        } else {
+          removeUpload();
+        }
+      }
+      
+      function removeUpload() {
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+      }
+      $('.image-upload-wrap').bind('dragover', function () {
+          $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function () {
+          $('.image-upload-wrap').removeClass('image-dropping');
+      });
+      
+        
+      </script>
+
+      <script>
+      
+        var app = new Vue({
+          el: '#app',
+          
+          data: {
+            message: 'Hello Vue!',
+            pages: [
+              {
+                sections: 0
+              }
+            ]
+          },
+          
+          methods: {
+            
+            addPage: function(event) {
+              
+              var self = this;
+              
+              self.pages.push({
+                sections: 0
+              });
+              
+            },
+            
+            removePage: function(){
+              
+              
+            }
+            
+          }
+        })
+      
+      var app = new Vue({
+        el: '#app2',
+        
+        data: {
+          message: 'Hello Vue!',
+          pages: [
+            {
+              sections: 0
+            }
+          ]
+        },
+        
+        methods: {
+          
+          addPage: function(event) {
+            
+            var self = this;
+            
+            self.pages.push({
+              sections: 0
+            });
+            
+          },
+          
+          removePage: function(){
+            
+            
+          }
+          
+        }
+      })
+
+      </script>
+
+      <script>
+      
+      $(function(){
+        $(".chosen-select").chosen({
+          max_selected_options: 5,
+          width: '100%'
+        }); 
+      })
+    </script>
+
+
+
+      <!-- jquery file uploader -->
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.ui.widget.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.fileupload.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.iframe-transport.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.fancy-fileupload.js"></script>
+      <script type="text/javascript">
+        $('#demo').FancyFileUpload({
+            params : {
+              action : 'fileuploader'
+            },
+            url :'',
+            maxfilesize : 9000000
+          });
+         
+
+      </script>
+
+
+   </body>
+</html>

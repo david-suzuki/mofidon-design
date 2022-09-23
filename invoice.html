@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html dir="rtl">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Gurdeep singh osahan">
+      <meta name="author" content="Gurdeep singh osahan">
+      <title>Mofidon - Invoice</title>
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="images/loogo.png">
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Font Awesome-->
+      <link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+      <!-- Material Design Icons -->
+      <link href="vendor/icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+      <!-- Slick -->
+      <link href="vendor/slick-master/slick/slick.css" rel="stylesheet" type="text/css">
+      <!-- Lightgallery -->
+      <link href="vendor/lightgallery-master/dist/css/lightgallery.min.css" rel="stylesheet">
+      <!-- Select2 CSS -->
+      <link href="vendor/select2/css/select2-bootstrap.css" />
+      <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet">
+   </head>
+   <body>
+      <!--    header -->
+
+<style>
+
+/* Invoice */
+
+#invoiceholder{
+    width:100%;
+    height: 100%;
+  }
+
+  #invoice{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    background: #FFF;
+  }
+
+  .dark #invoice{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    background: #0b1b2b !important;
+  }
+  
+  [id*='invoice-']{ /* Targets all id with 'col-' */
+    border-bottom: 1px solid #EEE;
+    padding: 30px;
+  }
+  .dark [id*='invoice-']{ /* Targets all id with 'col-' */
+    border-bottom: 1px solid #2a3a5c !important;
+    padding: 30px;
+  }
+  
+  #invoice-top{min-height: 120px;}
+  #invoice-mid{min-height: 120px;}
+  #invoice-bot{ min-height: 250px;}
+  
+  .logo-mofidon{
+    float: right;
+    height: 60px;
+    width: 60px;
+    background: url(images/loggo.png) no-repeat;
+    background-size: cover;
+  }
+  .dark .logo-mofidon{
+    float: right;
+    height: 60px;
+    width: 60px;
+    background: url(images/loggo-dark.png) no-repeat;
+    background-size: cover;
+  }
+  .clientlogo{
+    float: right;
+    height: 60px;
+    width: 60px;
+    background: url(images/Elzubair.jpg) no-repeat;
+    background-size: 60px 60px;
+    border-radius: 50px;
+  }
+  .info{
+    display: block;
+    float:right;
+    margin-left: 20px;
+  }
+  .title{
+    float: left;
+  }
+  .title p{text-align: right;}
+  #project{margin-left: 52%;}
+  .invoice-table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td{
+    padding: 10px 50px;
+    border: 1px solid #EEE
+  }
+  .dark td{
+    padding: 10px 50px;
+    border: 1px solid #1f2c47 !important;
+  }
+  .tabletitle{
+    padding: 5px;
+    font-size: smaller;
+    background: rgb(236, 243, 250);
+  }
+  .invoice-service{
+      border: 1px solid #EEE;
+
+}
+  .dark .tabletitle{
+    padding: 5px;
+    font-size: smaller;
+    background: #07131f !important;
+  }
+  .dark .invoice-service{
+    border: 1px solid #1f2c47 !important;
+   }
+   
+  .item{width: 50%;font-size: 20px !important;}
+  .itemtext{font-size: .9em;}
+  
+  #legalcopy{
+    margin-top: 0px;
+  }
+  form{
+    float:left;
+    text-align: left;
+  }
+  
+  
+  .effect2
+  {
+    position: relative;
+  }
+  .effect2:before, .effect2:after
+  {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 100%;
+    max-width:300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+  .effect2:after
+  {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    left: 10px;
+    right: auto;
+  }
+  
+  
+  
+  .legal{
+    width:70%;
+  }
+
+</style>      
+
+      <a class="dropdown-item">
+         <div class="darkmode"><!--3-->
+            <div class="light fa fa-sun-o"><!--4--></div>
+            <div class="dark fa fa-moon-o"><!--5--></div>
+            Change mode
+          </div> 
+      </a>
+      <!-- Invoice -->
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
+                  <h2 class="mt-5 p-0"><a href="dashboard.html">Go back to mofidon</a></h2>
+               </div>
+            </div>
+         </div>
+      </div>
+         
+      <div class="main-page ">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 ">
+                  
+
+                  <div id="invoiceholder">
+
+                     <div id="headerimage"></div>
+                     <div id="invoice" class="effect2">
+                       
+                       <div id="invoice-top">
+                         <div class="logo-mofidon border-grey ml-3"></div>
+                         <div class="info">
+                           <h2>Mofidon platform</h2>
+                           <p>  support@mofidon.com 
+                           </p>
+                         </div><!--End Info-->
+                         <div class="title">
+                           <h5>Invoice No: 23300</h5>
+                           <p>Date: 12-02-2021</br>
+                              
+                           </p>
+                         </div><!--End Title-->
+                       </div><!--End InvoiceTop-->
+                   
+                   
+                       
+                       <div id="invoice-mid">
+                         
+                         <div class="clientlogo border-grey ml-3"></div>
+                         <div class="info">
+                           <h2>Elzubair Mohammed Saleh</h2>
+                           <p>alzober1414@gmail.com</br>
+                         </div>
+                   
+                   
+                       </div><!--End Invoice Mid-->
+                       
+                       <div id="invoice-bot">
+                         
+                         <div id="table">
+                           <table class="invoice-table">
+                             <tr class="tabletitle">
+                               <td class="item"><h5>Order description</h5></td>
+                               <td class="Hours"><h5>Payment method</h5></td>
+                               <td class="Rate"><h5>Price</h5></td>
+                             </tr>
+                             
+                             <tr class="invoice-service">
+                              <td class="tableitem"><b class="itemtext">Buy a "5" services from Mofidon.com</b></td>
+                              <td class="tableitem"><b class="itemtext">Visa Card</b></td>
+                              <td class="tableitem"><b class="itemtext">56 SR</b></td>
+                            </tr>
+                            
+                            <tr class="invoice-service">
+                              <td class="tableitem"><b class="itemtext">VAT tax</b></td>
+                              <td class="tableitem"><b class="itemtext">Visa Card</b></td>
+                              <td class="tableitem"><b class="itemtext"> 2.67 SR </b></td>
+                            </tr>
+                            
+                               
+                             <tr class="tabletitle">
+                               <td class="Rate"><h5> Total</h5></td>
+                               <td class="payment" colspan="2"><h6>3,644.25  SR</h6></td>
+                             </tr>
+                             
+                           </table>
+                         </div><!--End Table-->
+                         
+                       </div><!--End InvoiceBot-->
+                     </div><!--End Invoice-->
+                   </div><!-- End Invoice Holder-->
+                   
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+         
+
+
+      <!-- Js Payment -->
+      <script>
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
+      </script>
+      <!-- Js Payment -->
+
+      <!-- New section -->
+
+      <script>
+      
+      /* Shivving (IE8 is not supported, but at least it won't look as awful)
+         /* ========================================================================== */
+         
+         (function (document) {
+            var
+            head = document.head = document.getElementsByTagName('head')[0] || document.documentElement,
+            elements = 'article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output picture progress section summary time video x'.split(' '),
+            elementsLength = elements.length,
+            elementsIndex = 0,
+            element;
+         
+            while (elementsIndex < elementsLength) {
+               element = document.createElement(elements[++elementsIndex]);
+            }
+         
+            element.innerHTML = 'x<style>' +
+               'article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}' +
+               'audio[controls],canvas,video{display:inline-block}' +
+               '[hidden],audio{display:none}' +
+               'mark{background:#FF0;color:#000}' +
+            '</style>';
+         
+            return head.insertBefore(element.lastChild, head.firstChild);
+         })(document);
+         
+         /* Prototyping
+         /* ========================================================================== */
+         
+         (function (window, ElementPrototype, ArrayPrototype, polyfill) {
+            function NodeList() { [polyfill] }
+            NodeList.prototype.length = ArrayPrototype.length;
+         
+            ElementPrototype.matchesSelector = ElementPrototype.matchesSelector ||
+            ElementPrototype.mozMatchesSelector ||
+            ElementPrototype.msMatchesSelector ||
+            ElementPrototype.oMatchesSelector ||
+            ElementPrototype.webkitMatchesSelector ||
+            function matchesSelector(selector) {
+               return ArrayPrototype.indexOf.call(this.parentNode.querySelectorAll(selector), this) > -1;
+            };
+         
+            ElementPrototype.ancestorQuerySelectorAll = ElementPrototype.ancestorQuerySelectorAll ||
+            ElementPrototype.mozAncestorQuerySelectorAll ||
+            ElementPrototype.msAncestorQuerySelectorAll ||
+            ElementPrototype.oAncestorQuerySelectorAll ||
+            ElementPrototype.webkitAncestorQuerySelectorAll ||
+            function ancestorQuerySelectorAll(selector) {
+               for (var cite = this, newNodeList = new NodeList; cite = cite.parentElement;) {
+                  if (cite.matchesSelector(selector)) ArrayPrototype.push.call(newNodeList, cite);
+               }
+         
+               return newNodeList;
+            };
+         
+            ElementPrototype.ancestorQuerySelector = ElementPrototype.ancestorQuerySelector ||
+            ElementPrototype.mozAncestorQuerySelector ||
+            ElementPrototype.msAncestorQuerySelector ||
+            ElementPrototype.oAncestorQuerySelector ||
+            ElementPrototype.webkitAncestorQuerySelector ||
+            function ancestorQuerySelector(selector) {
+               return this.ancestorQuerySelectorAll(selector)[0] || null;
+            };
+         })(this, Element.prototype, Array.prototype);
+         
+         /* Helper Functions
+         /* ========================================================================== */
+         
+         function generateTableRow() {
+            var emptyColumn = document.createElement('tr');
+         
+            emptyColumn.innerHTML = '<td><a class="cut">-</a><span contenteditable></span></td>' +
+               '<td><span contenteditable></span></td>' +
+               '<td><span data-prefix>$</span><span contenteditable>0.00</span></td>' +
+               '<td><span contenteditable>0</span></td>' +
+               '<td><span data-prefix>$</span><span>0.00</span></td>';
+         
+            return emptyColumn;
+         }
+         
+         function parseFloatHTML(element) {
+            return parseFloat(element.innerHTML.replace(/[^\d\.\-]+/g, '')) || 0;
+         }
+         
+         function parsePrice(number) {
+            return number.toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,');
+         }
+         
+         /* Update Number
+         /* ========================================================================== */
+         
+         function updateNumber(e) {
+            var
+            activeElement = document.activeElement,
+            value = parseFloat(activeElement.innerHTML),
+            wasPrice = activeElement.innerHTML == parsePrice(parseFloatHTML(activeElement));
+         
+            if (!isNaN(value) && (e.keyCode == 38 || e.keyCode == 40 || e.wheelDeltaY)) {
+               e.preventDefault();
+         
+               value += e.keyCode == 38 ? 1 : e.keyCode == 40 ? -1 : Math.round(e.wheelDelta * 0.025);
+               value = Math.max(value, 0);
+         
+               activeElement.innerHTML = wasPrice ? parsePrice(value) : value;
+            }
+         
+            updateInvoice();
+         }
+         
+         /* Update Invoice
+         /* ========================================================================== */
+         
+         function updateInvoice() {
+            var total = 0;
+            var cells, price, total, a, i;
+         
+            // update inventory cells
+            // ======================
+         
+            for (var a = document.querySelectorAll('table.inventory tbody tr'), i = 0; a[i]; ++i) {
+               // get inventory row cells
+               cells = a[i].querySelectorAll('span:last-child');
+         
+               // set price as cell[2] * cell[3]
+               price = parseFloatHTML(cells[2]) * parseFloatHTML(cells[3]);
+         
+               // add price to total
+               total += price;
+         
+               // set row total
+               cells[4].innerHTML = price;
+            }
+         
+            // update balance cells
+            // ====================
+         
+            // get balance cells
+            cells = document.querySelectorAll('table.balance td:last-child span:last-child');
+         
+            // set total
+            cells[0].innerHTML = total;
+         
+            // set balance and meta balance
+            cells[2].innerHTML = document.querySelector('table.meta tr:last-child td:last-child span:last-child').innerHTML = parsePrice(total - parseFloatHTML(cells[1]));
+         
+            // update prefix formatting
+            // ========================
+         
+            var prefix = document.querySelector('#prefix').innerHTML;
+            for (a = document.querySelectorAll('[data-prefix]'), i = 0; a[i]; ++i) a[i].innerHTML = prefix;
+         
+            // update price formatting
+            // =======================
+         
+            for (a = document.querySelectorAll('span[data-prefix] + span'), i = 0; a[i]; ++i) if (document.activeElement != a[i]) a[i].innerHTML = parsePrice(parseFloatHTML(a[i]));
+         }
+         
+         /* On Content Load
+         /* ========================================================================== */
+         
+         function onContentLoad() {
+            updateInvoice();
+         
+            var
+            input = document.querySelector('input'),
+            image = document.querySelector('img');
+         
+            function onClick(e) {
+               var element = e.target.querySelector('[contenteditable]'), row;
+         
+               element && e.target != document.documentElement && e.target != document.body && element.focus();
+         
+               if (e.target.matchesSelector('.add')) {
+                  document.querySelector('table.inventory tbody').appendChild(generateTableRow());
+               }
+               else if (e.target.className == 'cut') {
+                  row = e.target.ancestorQuerySelector('tr');
+         
+                  row.parentNode.removeChild(row);
+               }
+         
+               updateInvoice();
+            }
+         
+            function onEnterCancel(e) {
+               e.preventDefault();
+         
+               image.classList.add('hover');
+            }
+         
+            function onLeaveCancel(e) {
+               e.preventDefault();
+         
+               image.classList.remove('hover');
+            }
+         
+            function onFileInput(e) {
+               image.classList.remove('hover');
+         
+               var
+               reader = new FileReader(),
+               files = e.dataTransfer ? e.dataTransfer.files : e.target.files,
+               i = 0;
+         
+               reader.onload = onFileLoad;
+         
+               while (files[i]) reader.readAsDataURL(files[i++]);
+            }
+         
+            function onFileLoad(e) {
+               var data = e.target.result;
+         
+               image.src = data;
+            }
+         
+            if (window.addEventListener) {
+               document.addEventListener('click', onClick);
+         
+               document.addEventListener('mousewheel', updateNumber);
+               document.addEventListener('keydown', updateNumber);
+         
+               document.addEventListener('keydown', updateInvoice);
+               document.addEventListener('keyup', updateInvoice);
+         
+               input.addEventListener('focus', onEnterCancel);
+               input.addEventListener('mouseover', onEnterCancel);
+               input.addEventListener('dragover', onEnterCancel);
+               input.addEventListener('dragenter', onEnterCancel);
+         
+               input.addEventListener('blur', onLeaveCancel);
+               input.addEventListener('dragleave', onLeaveCancel);
+               input.addEventListener('mouseout', onLeaveCancel);
+         
+               input.addEventListener('drop', onFileInput);
+               input.addEventListener('change', onFileInput);
+            }
+         }
+         
+         window.addEventListener && document.addEventListener('DOMContentLoaded', onContentLoad);
+         
+         
+      </script>
+      <!-- New section -->
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Contact form JavaScript -->
+      <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <script src="js/jqBootstrapValidation.js"></script>
+      <script src="js/contact_me.js"></script>
+      <!-- Slick -->
+      <script src="vendor/slick-master/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+      <!-- lightgallery -->
+      <script src="vendor/lightgallery-master/dist/js/lightgallery-all.min.js"></script>
+      <!-- select2 Js -->
+      <script src="vendor/select2/js/select2.min.js"></script>
+      <!-- Custom -->
+      <script src="js/custom.js"></script>
+      <script src="js/dark.js"></script>
+   </body>
+</html>

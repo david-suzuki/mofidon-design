@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html dir="rtl">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Gurdeep singh osahan">
+      <meta name="author" content="Gurdeep singh osahan">
+      <title>Mofidon - New work</title>
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="images/loogo.png">
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Font Awesome-->
+      <link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+      <!-- Material Design Icons -->
+      <link href="vendor/icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+      <!-- Slick -->
+      <link href="vendor/slick-master/slick/slick.css" rel="stylesheet" type="text/css">
+      <!-- Lightgallery -->
+      <link href="vendor/lightgallery-master/dist/css/lightgallery.min.css" rel="stylesheet">
+      <!-- Select2 CSS -->
+      <link href="vendor/select2/css/select2-bootstrap.css" />
+      <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link rel="stylesheet" href="css/chosen.css">
+        
+
+      <link href="css/style.css" rel="stylesheet">
+      <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+      <!-- jquery file upload css -->
+      <link rel="stylesheet" type="text/css" href="css/jquery-file-uploader/fancy_fileupload.css">
+   </head>
+   <body>
+      <!--    header -->
+  
+
+      
+      <style>
+
+        /* Area of Upload */  
+        .file-upload {
+            background-color: transparent !important;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          
+          .file-upload-btn {
+            width: 100%;
+            margin: 0;
+            color: #fff;
+            background: #1f70b2;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            border-bottom: 4px solid #164974;
+            transition: all .2s ease;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+          
+          .file-upload-btn:hover {
+            background: #164974;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+          } 
+        
+          .dark .file-upload {
+            background-color: transparent !important;
+          }
+          
+          .dark .file-upload-btn {
+            width: 100%;
+            margin: 0;
+            color: rgb(236, 245, 247);
+            background: #335b79;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            border-bottom: 4px solid #071827;
+            transition: all .2s ease;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+          
+          .dark .file-upload-btn:hover {
+            background: #26465f;
+            color: rgb(236, 245, 247);
+            transition: all .2s ease;
+            cursor: pointer;
+          }
+          
+          .file-upload-btn:active {
+            border: 0;
+            transition: all .2s ease;
+          }
+          
+          .file-upload-content {
+            display: none;
+            text-align: center;
+          }
+          
+          .file-upload-input {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            opacity: 0;
+            cursor: pointer;
+          }
+          
+          .image-upload-wrap {
+            margin-top: 20px;
+            position: relative;
+          }
+          
+          .image-dropping,
+          .image-upload-wrap:hover {
+            background-color: #1FB264;
+            border: 4px dashed #ffffff;
+          }
+          
+          .image-title-wrap {
+            padding: 0 15px 15px 15px;
+            color: #222;
+          }
+          
+          .drag-text {
+            text-align: center;
+          }
+          
+          .drag-text h3 {
+            font-weight: 100;
+            text-transform: uppercase;
+            color: #15824B;
+            padding: 60px 0;
+          }
+          
+          .file-upload-image {
+            max-height: 200px;
+            max-width: 200px;
+            margin: auto;
+            padding: 20px;
+          }
+          
+          .remove-image {
+            width: 200px;
+            margin: 0;
+            color: #fff;
+            background: #cd4535;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            border-bottom: 4px solid #b02818;
+            transition: all .2s ease;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+          
+          .remove-image:hover {
+            background: #c13b2a;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+          }
+          
+          .remove-image:active {
+            border: 0;
+            transition: all .2s ease;
+          }
+        
+        
+        
+        
+        /* Add new row */  
+        
+        .login {
+            width: 25%;
+          }
+          
+          .bottom{
+            position: absolute;
+            bottom:0;
+            left: 0;
+          }
+          
+          .logout {
+            position: absolute;;
+            top:10px;
+            right:10px;
+          }
+          
+          .up-directory {
+            position: absolute;;
+            top:10px;
+            left:12%;
+          }
+          
+          .form-label {
+            text-align: right;
+          }
+          
+          .form-text{
+            text-transform: capitalize;;
+          }
+          
+          .column-center {
+            border-left: 1px solid #EEE;
+            /*border-right: 1px solid #EEE;*/
+          }
+          
+          .column-right {
+            border-left: 1px solid #EEE;
+            /*border-right: 1px solid #EEE;*/
+          }
+          
+          .general_padding {
+            padding: 0 5px;
+          }
+          
+          #ajax_msg{
+            height: auto;
+          }
+          
+          .suc_msg {
+            padding: 3px 5px;
+            /*height: 30px;*/
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+            border-color: #00B233;
+            background-color: rgba(0,255,72,.3);
+            color: #00B233;
+          }
+          
+          .err_msg {
+            padding: 3px 5px;
+            /*height: 30px;*/
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+            border-color: #B20000;
+            background-color: rgba(255,25,25,.3);
+            color: #B20000;
+          }
+          
+          /*Table styling/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+          .invoice_table tr:nth-child(2n+0){
+            background-color: rgba(31,141,214,0.1);
+          }
+          
+          .invoice_table tr{
+            height: 30px;
+            font-size: 14px;
+          }
+          
+          .invoice_table button{
+            height: 20px;
+            font-size: 11px;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+          
+          /*Open Invoice Table styling/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+          
+          .openInvoice-list tr{
+            font-size: 13px;
+          }
+          
+          table.entity_list_table {
+            border-collapse:collapse;
+          }
+          
+          table.openInvoice-list th, table.openInvoice-list td {
+            padding: 2px 15px 2px 15px;
+            text-align: center;
+          }
+          
+          table.openInvoice-list thead th {
+            background-color:rgb(249,249,249);
+          }
+          
+          table.openInvoice-list tfoot td {
+            background-color:#ffccff;
+          }
+          
+          table.openInvoice-list tbody tr{  
+            border:1px solid rgba(0,0,0,.2);
+            border-right-style: none;
+            border-left-style: none;
+          }
+          
+          table.openInvoice-list tr.tbody_header {
+            font-weight:bold;
+            text-align:center;
+            background-color:#dddddd;
+          }
+          
+          table.openInvoice-list a.pagelink {
+            padding-left:5px;
+            padding-right:5px;
+            border:1px solid #666666;
+            margin:0px 5px 0px 5px;
+          }
+          
+          /*// Invoice Number */
+          .openInvoice-list th:first-child{
+            width:80px;
+          }
+          
+          /*// Date */
+          .openInvoice-list th:nth-child(2){
+            width:100px;
+          }
+          
+          /*// Days Aging */
+          .openInvoice-list th:nth-child(3){
+            width:110px;
+          }
+          
+          /*// Customer */
+          .openInvoice-list th:nth-child(4){
+            width:190px;
+          }
+          
+          /*// Invoice Total */
+          .openInvoice-list th:nth-child(5){
+            width:120px;
+          }
+          
+          /*// Amount Paid */
+          .openInvoice-list th:nth-child(6){
+            width:120px;
+          }
+          
+          /*// Open Balance */
+          .openInvoice-list th:nth-child(7){
+            width:120px;
+          }
+          
+          /*Form Styling ///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+          
+          .rate {
+            width: 100%;
+          }
+          
+          .qty {
+            width:100%;
+          }
+          
+          .total {
+            width: 100%;
+          }
+          
+          
+          /* CSS for Journal Entrees */
+          
+          .remove-btn {
+            width: 20px;
+            background:#CA5454;
+            color:white;
+          }
+          
+          .je .top, .je .bottom {
+            
+          background:#191818;
+            
+          }
+          .je tr:nth-child(even) {
+            background: #f2f2f2
+          }
+          
+          .je tr:nth-child(odd) {
+            background: #FFF
+          }
+          
+          
+          /* toggles row when input is in focus */
+          
+          .je tr.active {
+            background: #C6EBF7
+          }
+          
+          .je tr.button-row, .je tr.button-row button {
+            background: #1f8dd6;
+            color:white;
+            font-size:105%;
+          }
+          
+          .je .button-td {
+            text-align: center;
+            border: solid;
+            border-width: 1px;
+            border-color: gray;
+          }
+          
+          .je table thead {
+            border-bottom: solid;
+            border-width: 1px;
+            border-color: #909090;
+          }
+          
+          
+          /* ----- | padding | ----- */
+          
+          .section-01 {
+            padding-left: 85px; 
+            padding-right: 85px;
+            padding-bottom: 15px;
+            
+          }
+          
+          .section-02 {
+            padding-top: 15px;
+            /*padding-left: 85px; */
+            padding-right: 85px;
+            padding-bottom: 15px;
+            border: solid;
+            border-top-width: 1px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 1px;
+            border-color: gray;
+            
+          }
+          
+          .section-03 {
+            padding-top: 25px;
+            padding-left: 11%; 
+            padding-right: 85px;
+            padding-bottom: 15px;
+          }
+          
+          .section-04 {
+            padding-top: 25px;
+            padding-left: 85px; 
+            padding-right: 85px;
+            padding-bottom: 15px;
+          }
+          
+          
+          /* ----- | Global Settings | ----- */
+          
+          
+          /*GLOBAL alignments */
+          
+          .text-center {
+            text-align: center;
+          }
+          
+          .center-block {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+          }
+          
+          .pull-right {
+            float: right !important;
+          }
+          
+          .pull-left {
+            float: left !important;
+          }
+          
+          
+          /* GLOBAL pure btn custom */
+          
+          .pure-button {
+            border: solid;
+            border-color: gray;
+            border-width: 1px;
+            border-radius:3px;
+          }
+          
+          .button-xsmall {
+            font-size: 70%;
+          }
+          
+          .button-small {
+            font-size: 85%;
+          }
+          
+          .button-large {
+            font-size: 110%;
+          }
+          
+          .button-xlarge {
+            font-size: 125%;
+            font-weight:bold;
+          }
+          
+          .new-row-btn,.new-row-btn:hover {
+            width:100%;
+            border:none;
+            background:none;
+            font-weight:bold;
+          }
+          
+          
+          
+          
+          /* ----- | Global Settings End | ----- */
+          
+          .cur_span{
+            position:absolute;
+          }
+          
+          /* .currency {
+            padding-left:12px;
+          }
+          
+          .currency-symbol {
+            position:absolute;
+            padding: 1px 5px;
+          } */
+        
+        #journal-entrees, #journal-entrees2, #journal-entrees3 {width: 100%;margin-top: 15px;}
+        #journal-entrees tr, #journal-entrees2 tr, #journal-entrees3 tr {margin-bottom: 15px !important;display: block;}
+        #journal-entrees tr td:nth-child(3), #journal-entrees2 tr td:nth-child(3), #journal-entrees3 tr td:nth-child(3) {width: 50px;text-align: center;}
+        
+        
+        .form-group + .form-group {
+          margin-top: 16px;
+        }
+        .form-group .form-group-input-container {
+          position: relative;
+        }
+        .form-group .form-control {
+          height: 40px;
+          width: 100%;
+          border-radius: 5px;
+          padding: 0 10px;
+          border: 1px solid #a0aec0;
+          font-size: 0.9rem;
+          color: #4a5568;
+          font-family: inherit;
+          text-align: right;
+        }
+        .form-group .form-control::-webkit-input-placeholder {
+          color: #a0aec0;
+          text-align: right;
+        }
+        .form-group .form-control::-moz-placeholder {
+          color: #a0aec0;
+        }
+        .form-group .form-control:-ms-input-placeholder {
+          color: #a0aec0;
+        }
+        .form-group .form-control:-moz-placeholder {
+          color: #a0aec0;
+        }
+        .form-group .form-group-label {
+          font-weight: bold;
+          display: block;
+          margin-bottom: 8px;
+        }
+        .form-group .form-group-help {
+          font-size: 0.875rem;
+          margin-top: 8px;
+          display: block;
+          color: #718096;
+        }
+        .form-group details summary {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          outline: none;
+          color: #718096;
+          opacity: 0.5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .form-group details summary:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+        .form-group details summary svg {
+          width: 20px;
+          height: 20px;
+        }
+        .form-group details summary::-webkit-details-marker {
+          display: none;
+        }
+        .textarea{
+          height: 300px !important;
+          padding-top: 10px !important;
+        }
+        
+        .upload{
+          height: 10px !important;
+        }
+        
+        </style>
+        
+  
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">
+  <div class="container">
+     <!-- Sidebar Toggle (Topbar) -->
+     <a class="navbar-brand logo-img" href="index.html"></a>
+     <!-- Topbar Search -->
+     <form class="d-none d-sm-inline-block form-inline mr-auto my-md-0 mw-100 navbar-search">
+        <div class="search-box">
+           <button class="search-btn"><i class="fa fa-search fa-sm"></i></button>
+           <input class="search-input" type="text" placeholder="Search about service..">
+         </div>
+         <!-- You just need to get this field. End -->
+     </form>
+     <!-- Topbar Navbar -->
+     <ul class="navbar-nav">
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications d-sm-none">
+           <div class="search-box">
+              <button class="search-btn"><i class="fa fa-search fa-sm"></i></button>
+              <input class="search-input" type="text" placeholder="Search about service..">
+            </div>
+            <!-- You just need to get this field. End -->
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications d-sm-none">
+           <a class="btn btn-icon dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-search fa-fw"></i>
+           </a>
+           <!-- Dropdown - Messages -->
+           <div class="dropdown-menu dropdown-menu-right p-3 shadow-sm animated--grow-in" aria-labelledby="searchDropdown">
+              <form class="form-inline mr-auto w-100 navbar-search">
+                 <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Find Services..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                       <button class="btn btn-primary" type="button">
+                       <i class="fa fa-search fa-sm"></i>
+                       </button>
+                    </div>
+                 </div>
+              </form>
+           </div>
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+           <a href="new_service.html" class="badge badge-dark p-3">Add new service &nbsp;  <i class="fa fa-plus-circle"></i></a>
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+           <span class="badge-dropdown tracker-wishlist"><b>3</b></span>
+           <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-heart fa-sm"></i>
+           </a>
+           <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+              <h6 class="dropdown-header dropdown-notifications-header">
+                 <i class="fa fa-heart ml-2" aria-hidden="true"></i>
+                Favorite
+              </h6>
+              <a class="dropdown-item dropdown-notifications-item" href="#!">
+                 <style>
+                    .dropdown-notifications-item-img{
+                       border-radius: 5px !important;
+                    }
+                 </style>
+                 <img class="dropdown-notifications-item-img-2 dropdown-notifications-item-img" src="images/ahmed.jpeg">
+                 <div class="dropdown-notifications-item-content">
+                    <div class="dropdown-notifications-item-content-text">I will buy a new server for you..</div>
+                    <div class="dropdown-notifications-item-content-details"><b class="green-color"> Start from 10 Saudi rials</b></div>
+                 </div>
+              </a>
+              <a class="dropdown-item dropdown-notifications-footer" href="favorite.html">See Fav page</a>
+           </div>
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+            <span class="badge-dropdown tracker-cart"><b>1</b></span>
+           <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-shopping-cart fa-sm"></i>
+           </a>
+           <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+              <h6 class="dropdown-header dropdown-notifications-header">
+                 <i class="fa fa-shopping-cart ml-2" aria-hidden="true"></i>
+                Cart
+              </h6>
+              <a class="dropdown-item dropdown-notifications-item" href="#!">
+                 <style>
+                    .dropdown-notifications-item-img{
+                       border-radius: 5px !important;
+                    }
+                 </style>
+                 <img class="dropdown-notifications-item-img-2 dropdown-notifications-item-img" src="images/ahmed.jpeg">
+                 <div class="dropdown-notifications-item-content">
+                    <div class="dropdown-notifications-item-content-text">I will buy a new server for you..</div>
+                    <div class="dropdown-notifications-item-content-details"><b class="green-color"> Start from 10 Saudi rials</b></div>
+                 </div>
+              </a>
+              <a class="dropdown-item dropdown-notifications-footer" href="cart.html">See cart page</a>
+           </div>
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+           <span class="badge-dropdown tracker-notifications"><b>3</b></span>
+           <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell ml-2">
+                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                 <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+           </a>
+           <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
+              <h6 class="dropdown-header dropdown-notifications-header">
+                 <i class="fa fa-bell ml-2" aria-hidden="true"></i>
+                 Notification
+              </h6>
+              <a class="dropdown-item dropdown-notifications-item" href="#!">
+                 <div class="dropdown-notifications-item-icon bg-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                 </div>
+                 <div class="dropdown-notifications-item-content">
+                    <div class="dropdown-notifications-item-content-text">You have successfully submit a new service to be reviewed</div>
+                    <div class="dropdown-notifications-item-content-details"> 30 minutes ago</div>
+                 </div>
+              </a>
+              <a class="dropdown-item dropdown-notifications-item" href="#!">
+                 <div class="dropdown-notifications-item-icon bg-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                 </div>
+                 <div class="dropdown-notifications-item-content">
+                    <div class="dropdown-notifications-item-content-text"> You need to re-submit from here</div>
+                    <div class="dropdown-notifications-item-content-details">13 minutes ago</div>
+                 </div>
+              </a>
+              <a class="dropdown-item dropdown-notifications-footer" href="notifications.html">See notifications page</a>
+           </div>
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications border-grey">
+           <span class="badge-dropdown tracker-messages"><b>3</b></span>
+           <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail m-2">
+                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                 <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+           </a>
+           <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+              <h6 class="dropdown-header dropdown-notifications-header">
+                 <i class="fa fa-comments-o ml-2" aria-hidden="true"></i>
+                 Messages
+              </h6>
+              <a class="dropdown-item dropdown-notifications-item" href="#!">
+                 <img class="dropdown-notifications-item-img" src="images/Elzubair.jpg">
+                 <div class="dropdown-notifications-item-content">
+                    <div class="dropdown-notifications-item-content-text">Hello there</div>
+                    <div class="dropdown-notifications-item-content-details">1 minute ago</div>
+                 </div>
+              </a>
+              <a class="dropdown-item dropdown-notifications-item" href="#!">
+                 <img class="dropdown-notifications-item-img" src="images/Elzubair.jpg">
+                 <div class="dropdown-notifications-item-content">
+                    <div class="dropdown-notifications-item-content-text">Pls accept my invite</div>
+                    <div class="dropdown-notifications-item-content-details">2 minutes ago</div>
+                 </div>
+              </a>
+              <a class="dropdown-item dropdown-notifications-footer" href="messages.html">See messages</a>
+           </div>
+        </li>
+        <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-user border-grey">
+           <a class="btn btn-icon btn-icon-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid " src="images/Elzubair.jpg"></a>
+           <div class="dropdown-menu dropdown-menu-left border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+              <h6 class="dropdown-header d-flex align-items-center">
+                 <img class="dropdown-user-img border-dropdown-profile" src="images/Elzubair.jpg">
+                 <div class="dropdown-user-details">
+                    <div class="dropdown-user-details-name">Elzubair Mohammed Saleh</div>
+                    <div class="dropdown-user-details-email">alzober1414@gmail.com</div>
+                 </div>
+              </h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="dashboard.html">
+                 <i class="fa fa-user-circle ml-2" aria-hidden="true"></i>
+                 Profile
+              </a>
+              <a class="dropdown-item" href="setting.html">
+                 <i class="fa fa-cog ml-2" aria-hidden="true"></i>
+                 Settings
+              </a>
+              <a class="dropdown-item" href="my_services.html">
+                 <i class="fa fa-briefcase ml-2" aria-hidden="true"></i>
+                 My services
+              </a>
+              <a class="dropdown-item" href="compare.html">
+                 <i class="fa fa-bar-chart ml-2" aria-hidden="true"></i>
+                 Comapre
+              </a>
+              <a class="dropdown-item" href="tickets.html">
+                 <i class="fa fa-life-ring ml-2" aria-hidden="true"></i>
+                 My tickets
+              </a>
+              <a class="dropdown-item">
+                 <div class="darkmode"><!--3-->
+                    <div class="light fa fa-sun-o"><!--4--></div>
+                    <div class="dark fa fa-moon-o"><!--5--></div>
+                    Change mode
+                  </div> 
+              </a>
+              <a class="dropdown-item" href="#">
+                 <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
+                 Logout
+              </a>
+           </div>
+        </li>
+     </ul>
+     
+  </div>
+</nav>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-nav osahan-nav-mid px-0 shadow-sm">
+  <div class="container">
+     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+           <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Marketing</b>  <i class="fa fa-building" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                 <a class="dropdown-item" href="product.html">Online Marketing sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Online Marketing sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Online Marketing sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Writing & translations</b> <i class="fa fa-desktop" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                 <a class="dropdown-item" href="product.html">Writing & translations sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Writing & translations sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Writing & translations sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Business</b> <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
+                 <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Business & Consulting sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Development</b> <i class="fa fa-paint-brush" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                 <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Development sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Development sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Sounds </b> <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="product.html">Sounds sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Sounds sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Sounds sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Teaching online</b> <i class="fa fa-microphone" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="product.html">Teaching online sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Teaching online sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Entertainment</b> <i class="fa fa-microphone" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Entertainment sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Design</b> <i class="fa fa-video-camera" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Design sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Design sub category 1</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <b>Others</b> <i class="fa fa-video-camera" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Others sub category 1</a>
+                 <a class="dropdown-item" href="product.html">Others sub category 1</a>
+              </div>
+           </li>
+        </ul>
+     </div>
+     <ul class="navbar-nav ml-auto">
+        <!-- Here -->
+        <!-- <li class="nav-item">
+           <a class="nav-link" href="become-a-seller.html">
+              <span>أضف خدمة</span>
+           <i class="fa fa-fw fa-plus-circle"></i>
+           </a>
+        </li> -->
+        <!-- <li class="nav-item">
+           <a class="nav-link" href="become-a-seller.html">
+              <span>أصبح مفيد</span>
+           <i class="fa fa-fw fa-trophy"></i>
+           </a>
+        </li> -->
+     </ul>
+  </div>
+</nav>
+
+      <!-- Inner Header -->
+      <section class="py-5 bg-dark bg-dark-service inner-header">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 text-center">
+                  <h1 class="mt-0 mb-3 text-white">Add new work</h1>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- End Inner Header -->
+      <!--   header -->
+      <style>
+         .main-page{
+            direction: rtl;
+         }
+      </style>
+
+      <div class="main-page best-selling">
+         <div class="view_slider recommended pt-5">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 left pb-4 ">
+                     <div id="description" class="card p-4 border">
+                      <form>
+                        <div class="form-group">
+                          <label for="participants" class="form-group-label">Name</label>
+                          <div class="form-group-input-container">
+                            <input type="text" id="participants" class="form-control" placeholder="Add the name of the work">
+                            <details>
+                              <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                                  <circle cx="12" cy="12" r="10" />
+                                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                  <line x1="12" y1="17" x2="12.01" y2="17" /></svg></summary>
+                              <small class="form-group-help">
+                                The name that will be displayed in your public profile.
+                              </small>
+                            </details>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group">
+                          <label for="participants" class="form-group-label">Description</label>
+                          <div class="form-group-input-container">
+                            <textarea type="text"name="description" class="form-control textarea" placeholder="Add new description" cols="30" rows="10"></textarea>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="row pt-3">
+                        <div class="col-12">
+                          <form>
+                            <div class="form-group">
+                              <label for="participants" class="form-group-label">Price</label>
+                              <div class="form-group-input-container">
+                                <input type="number" name="name" class="form-control" placeholder="e.g. Harry Potter"></input>
+                                <details>
+                                  <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                                      <circle cx="12" cy="12" r="10" />
+                                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                      <line x1="12" y1="17" x2="12.01" y2="17" /></svg></summary>
+                                  <small class="form-group-help">
+                                    The name that will be displayed in your public profile.
+                                  </small>
+                                </details>
+                              </div>
+                            </div>
+                          </form>
+                          
+                        </div>
+                      </div>
+                      
+                        <hr>
+
+
+                        <div class="row">
+                          <div class="col-12">
+                            <h5 id="aboutSeller " class="right"><b>Skills used in this work</b></h5>
+                            <div class="color-3">
+                              <select data-placeholder="Select Categories" multiple class="chosen-select" tabindex="8">
+                                <option>Design</option>
+                                <option>HTML5</option>
+                                <option>CSS3</option>
+                                <option>jQuery</option>
+                                <option>BS4</option>
+                                <option>Bootstrap</option>
+                                <option>WordPress</option>
+                                <option>FrontEnd</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p class="green-color pt-2"> <span data-toggle="tooltip" data-placement="top" title="You have to"><i class="fa fa-question-circle" aria-hidden="true"></i></span> You have 5 skills to choose</p>
+
+
+                        <hr>
+                        
+                        <h5 id="aboutSeller " class="right"><b>Main image</b></h5>
+
+                        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                        <div class="file-upload">
+                          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                          
+                          <div class="image-upload-wrap">
+                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                       
+                      </div>
+                      <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                          <button type="button" onclick="removeUpload()" class="remove-image">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="green-color pt-2"> <span data-toggle="tooltip" data-placement="top" title="You have 1 image to upload"><i class="fa fa-question-circle" aria-hidden="true"></i></span> You have 1 image to upload</p>
+
+
+                        <hr>
+
+                        <h5 id="aboutSeller " class="right"><b>Photos</b></h5>
+                        
+                        <!-- Upload Area -->
+                        <!-- <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                        <div class="file-upload">
+                          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">إضافة صورة / فيديو</button>
+                        
+                          <div class="image-upload-wrap">
+                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" multiple />
+                           
+                          </div>
+                          <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="your image" />
+                            <div class="image-title-wrap">
+                              <button type="button" onclick="removeUpload()" class="remove-image">حذف الملف</button>
+                            </div>
+                          </div>
+                        </div> -->
+                         <input id="demo" class="upload" height="10px" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                         <center><b class="mt-3 font-size-15">Upload/Drag the files here</b></center>
+                        <!-- End Upload Area -->
+                        <p class="green-color pt-2"> <span data-toggle="tooltip" data-placement="top" title="You have 10 images to upload"><i class="fa fa-question-circle" aria-hidden="true"></i></span> You have 10 images to upload</p>
+
+                      
+                      
+
+                     </div>
+                     
+                  </div>
+                  <div class="col-lg-4 right pb-4">
+                     <div class="">
+                        <div class="tab-content">
+                           <div id="Premium" class="tab-pane fade show active">
+                              <a href="successfully-service.html"><button class="btn btn-primary">Create</button></a>
+                              <button class="danger-background-color mt-2"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="sticky mt-4">
+                        <div class="tab-content">
+                           <div id="Premium" class="tab-pane fade show active">
+                              <b class="pb-2">Watch this video to have a good work.</b>
+                              <br>
+                              <div class="embed-responsive embed-responsive-4by3">
+                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/ezbJwaLmOeM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      
+      <!--     market   -->
+      </div>
+      
+
+
+
+
+
+      <!--       footer -->
+      <footer class="bg-white">
+        <div class="container">
+           <div class="d-flex justify-content-between">
+              <div class="footer-list">
+                 <div class="footer-list-img-1 mofidon-footer">
+                    
+                 </div>
+                 <div class="footer-list-img-2">
+                    
+                 </div>
+              </div>
+              <div class="footer-list">
+                 
+              </div>
+              <div class="footer-list">
+                 <h2>Mofidon</h2>
+                 <ul class="list">
+                    <li><a href="about.html">About Mofidon</a></li>
+                    <li><a href="blogs.html">Mofidon guidnce</a></li>
+                    <li><a href="help.html">Help & support</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                 </ul>
+              </div>
+              <div class="footer-list">
+                 <h2>Important links</h2>
+                 <ul class="list">
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="terms.html">Terms & conditions</a></li>
+                    <li><a href="privacy.html">Privacy & Policy</a></li>
+                    <li><a href="refund.html">Refund policy</a></li>
+                 </ul>
+              </div>
+              <div class="footer-list">
+                 <h2>Information</h2>
+                 <ul class="list">
+                    <li><a href="marketing.html">About Marketing</a></li>
+                    <li><a href="sitemap.html">Site map</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="copyright">
+              <ul class="social">
+                 <li>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                 </li>
+              </ul>
+              <p>Copyright - Mofidon 2021
+              </p>
+              <b class="copyright-p"> 20333 Mofid available |  <i class="fa fa-fw fa-users"></i>
+              </b>
+              <b style="margin-left: 15px;" class="copyright-p"> Services available | 300011 	&nbsp;<i class="fa fa-fw fa-handshake-o"></i>
+              </b>
+           </div>
+        </div>
+     </footer>
+     <!--       footer-->
+      
+     
+	 <!-- video modal yieoyo -->
+	 
+	 <!-- Modal -->
+<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+        <div class="embed-responsive embed-responsive-4by3">
+                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/ezbJwaLmOeM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+                              </div>
+							  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+	 
+	 
+	 <!-- video modal yieoyo -->
+      <!-- New section -->
+
+      <!-- Uploading Js -->
+     <!--  <script>
+      
+      function readURL(input) {
+         if (input.files && input.files) {
+       
+           var reader = new FileReader();
+       
+           reader.onload = function(e) {
+             $('.image-upload-wrap').hide();
+       
+             $('.file-upload-image').attr('src', e.target.result);
+             $('.file-upload-content').show();
+       
+             $('.image-title').html(input.files[0].name);
+           };
+       
+           reader.readAsDataURL(input.files[0]);
+       
+         } else {
+           removeUpload();
+         }
+       }
+       
+       function removeUpload() {
+         $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+         $('.file-upload-content').hide();
+         $('.image-upload-wrap').show();
+       }
+       $('.image-upload-wrap').bind('dragover', function () {
+           $('.image-upload-wrap').addClass('image-dropping');
+         });
+         $('.image-upload-wrap').bind('dragleave', function () {
+           $('.image-upload-wrap').removeClass('image-dropping');
+       });
+      
+
+      </script> -->
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Contact form JavaScript -->
+      <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <script src="js/jqBootstrapValidation.js"></script>
+      <script src="js/contact_me.js"></script>
+      <!-- Slick -->
+      <script src="vendor/slick-master/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+      <!-- lightgallery -->
+      <script src="vendor/lightgallery-master/dist/js/lightgallery-all.min.js"></script>
+      <!-- select2 Js -->
+      <script src="vendor/select2/js/select2.min.js"></script>
+      <!-- Custom -->
+      <script src="js/custom.js"></script>
+
+
+       <!-- New section -->
+      <script>
+	   $(document).on('click','.sticky #Premium',function(){
+		$('#myModal').modal('show');
+	  });
+	  $(document).on('click','#myModal .btn',function(){
+		$('#myModal').modal('hide');
+	  });
+         /*----------------------------------------------------------------------------//
+         entree id value is on ID:entree-id
+         date value is on ID:entree-date
+         
+         ------------------------------------------------------------------------------*/
+         //this 1st section is not mine///
+         (function(b) {
+           var c = {
+             allowFloat: false,
+             allowNegative: false
+           };
+           b.fn.numericInput = function(e) {
+             var f = b.extend({}, c, e);
+             var d = f.allowFloat;
+             var g = f.allowNegative;
+             this.keypress(function(j) {
+               var i = j.which;
+               var h = b(this).val();
+               if (i > 0 && (i < 48 || i > 57)) {
+                 if (d == true && i == 46) {
+                   if (g == true && a(this) == 0 && h.charAt(0) == "-") {
+                     return false
+                   }
+                   if (h.match(/[.]/)) {
+                     return false
+                   }
+                 } else {
+                   if (g == true && i == 45) {
+                     if (h.charAt(0) == "-") {
+                       return false
+                     }
+                     if (a(this) != 0) {
+                       return false
+                     }
+                   } else {
+                     if (i == 8) {
+                       return true
+                     } else {
+                       return false
+                     }
+                   }
+                 }
+               } else {
+                 if (i > 0 && (i >= 48 && i <= 57)) {
+                   if (g == true && h.charAt(0) == "-" && a(this) == 0) {
+                     return false
+                   }
+                 }
+               }
+             });
+             return this
+           };
+         
+           function a(d) {
+             if (d.selectionStart) {
+               return d.selectionStart
+             } else {
+               if (document.selection) {
+                 d.focus();
+                 var f = document.selection.createRange();
+                 if (f == null) {
+                   return 0
+                 }
+                 var e = d.createTextRange(),
+                 g = e.duplicate();
+                 e.moveToBookmark(f.getBookmark());
+                 g.setEndPoint("EndToStart", e);
+                 return g.text.length
+               }
+             }
+             return 0
+           }
+         });
+         //^^ not mine//
+         
+         
+         $(document).ready(function() {
+         
+           inputhighlight();
+           
+
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 // update totals on "change" //
+           $("input").change(function(){
+             btn_t_update();
+           })
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                       // changes inputs to display decimals at all times//
+           $(document).on('blur',"input[type='number']",function(){
+             if ($(this).val() != "" ) {
+               $(this).val(parseFloat($(this).val()).toFixed(2));
+             }
+           });
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               //requests account dropdown options//
+           $.post("/oop/includes/select_chart_of_accounts.php",
+           {select_account : "true"},function(response){
+             $(".select_account, #select_account").html(response);
+           });
+           
+         });
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               /// highlight row on input focus ///
+         function inputhighlight() {
+           $('.row-input-group').focus(function() {
+             $(this).closest('tr').addClass('active');
+           });
+           $('.row-input-group').blur(function() {
+             $(this).closest('tr').removeClass('active');
+           });
+         };
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 ///creates a new row in table///
+         function newRow() {
+           var tr_s = "<tr name='entree-row' class='entree-row '>";
+           var tr_btn_s = "<tr class='button-row'>";
+           var tr_e = "</tr>";
+           var account_in_s = '';
+           var select_account = $("#select_account").html();
+           var row_insert = $("#row_insert").html();
+           var select_account_e = '</select></td>';
+           var credit_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right"  placeholder="..أكتب جوابك هنا"></td>';
+           var debit_in = '';
+           var memo_in = '<td><input type="text" name="name"  class="form-control full-width font-weight-bold text-muted right" placeholder="..أكتب سؤالك هنا"></td>';
+           var add_button = '<button onClick="newRow();" class="pure-button  new-row-btn " style="display:inline-block;text-align:center;">Add New <i style="color:white;"class="fa fa-plus" aria-hidden="true"></i></button>';
+           var remove_button = '<td><button tabindex = "-1" class="pure-button remove-btn"><i style="color:white;" class="fa fa-times" aria-hidden="true"></i></button></td>';
+           ///removes row with add button/// 
+           $(".button-row").remove();
+           ///adds row with inputs and last row with add button///
+           $("#journal-entrees .row-body").append(tr_s+account_in_s+select_account+select_account_e+debit_in+credit_in+memo_in+remove_button+tr_e+tr_btn_s+add_button+tr_e);
+           ///enables focus highlight on new rows///
+           inputhighlight();
+         };
+         function newRow2() {
+           var tr_s = "<tr name='entree-row' class='entree-row '>";
+           var tr_btn_s = "<tr class='button-row'>";
+           var tr_e = "</tr>";
+           var account_in_s = '';
+           var select_account = $("#select_account").html();
+           var row_insert = $("#row_insert").html();
+           var select_account_e = '</select></td>';
+           var credit_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right"  placeholder="..أكتب جوابك هنا"></td>';
+           var debit_in = '';
+           var memo_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right" placeholder="..أكتب سؤالك هنا"></td>';
+           var add_button = '<button onClick="newRow2();" class="pure-button  new-row-btn " style="display:inline-block;text-align:center;">Add New <i style="color:white;"class="fa fa-plus" aria-hidden="true"></i></button>';
+           var remove_button = '<td><button tabindex = "-1" class="pure-button remove-btn"><i style="color:white;" class="fa fa-times" aria-hidden="true"></i></button></td>';
+           ///removes row with add button/// 
+           $(".button-row").remove();
+           ///adds row with inputs and last row with add button///
+           $("#journal-entrees2 .row-body").append(tr_s+account_in_s+select_account+select_account_e+debit_in+credit_in+memo_in+remove_button+tr_e+tr_btn_s+add_button+tr_e);
+           ///enables focus highlight on new rows///
+           inputhighlight();
+         };
+         function newRow3() {
+           var tr_s = "<tr name='entree-row' class='entree-row '>";
+           var tr_btn_s = "<tr class='button-row'>";
+           var tr_e = "</tr>";
+           var account_in_s = '';
+           var select_account = $("#select_account").html();
+           var row_insert = $("#row_insert").html();
+           var select_account_e = '</select></td>';
+           var credit_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right"  placeholder="..أكتب جوابك هنا"></td>';
+           var debit_in = '';
+           var memo_in = '<td><input type="text" name="name" class="form-control full-width font-weight-bold text-muted right" placeholder="..أكتب سؤالك هنا"></td>';
+           var add_button = '<button onClick="newRow3();" class="pure-button  new-row-btn " style="display:inline-block;text-align:center;">Add New <i style="color:white;"class="fa fa-plus" aria-hidden="true"></i></button>';
+           var remove_button = '<td><button tabindex = "-1" class="pure-button remove-btn"><i style="color:white;" class="fa fa-times" aria-hidden="true"></i></button></td>';
+           ///removes row with add button/// 
+           $(".button-row").remove();
+           ///adds row with inputs and last row with add button///
+           $("#journal-entrees3 .row-body").append(tr_s+account_in_s+select_account+select_account_e+debit_in+credit_in+memo_in+remove_button+tr_e+tr_btn_s+add_button+tr_e);
+           ///enables focus highlight on new rows///
+           inputhighlight();
+         };
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 ///Remove a row with X button ///
+         $('#journal-entrees').on('click','button',function(e) {
+           $(this).closest('tr').remove();
+           btn_t_update();
+         });
+         $('#journal-entrees2').on('click','button',function(e) {
+           $(this).closest('tr').remove();
+           btn_t_update();
+         });
+         $('#journal-entrees3').on('click','button',function(e) {
+           $(this).closest('tr').remove();
+           btn_t_update();
+         });
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                         ///close window//
+         function close_window(url) {
+           var newWindow = window.open('','_self',''); //open the current window
+           window.close(url);
+         }
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               //update totals when removing a row//
+         function btn_t_update() {
+           var d_totals="debit_in";
+           var c_totals="credit_in";
+           update_in(d_totals);
+           update_in(c_totals);
+         }
+         
+         // $(".remove-btn").click(function( event ) {
+         //   event.preventDefault();
+         // });
+         
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                             //update value totals on input changes//
+         function update_in(name) {
+           var taskArray=new Array();
+           $("input[name*='"+name+"']").each(function() {
+             if ($(this).val()) {
+               taskArray.push($(this).val());
+             }
+           });
+           var result = taskArray.map(function(x) {
+             return parseFloat(x,".");
+           });
+           var sum=result.reduce(function(a,b) {
+             return a+b;
+           },0);
+           var sum=sum.toFixed(2);
+           $("#total_"+name).text(sum);
+           $("#total_"+name).formatCurrency();
+           balanceTotals();
+           $("input[name='testIndex[]']").val(sum);
+         }
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                 /// Format Curency function ///
+         (function($) {
+           $.formatCurrency={};
+           $.formatCurrency.regions=[];
+           $.formatCurrency.regions[""]= {
+             symbol: "$",
+             positiveFormat: "%s%n",
+             negativeFormat: "(%s%n)",
+             decimalSymbol: ".",
+             digitGroupSymbol: ",",
+             groupDigits: true
+           };
+           $.fn.formatCurrency = function(destination, settings) {
+             if (arguments.length == 1 && typeof destination !== "string") {
+               settings = destination;
+               destination = false
+             }
+             var defaults = {
+               name: "formatCurrency",
+               colorize: false,
+               region: "",
+               global: true,
+               roundToDecimalPlace: 2,
+               eventOnDecimalsEntered: false
+             };
+             defaults = $.extend(defaults, $.formatCurrency.regions[""]);
+             settings = $.extend(defaults, settings);
+             if (settings.region.length > 0) {
+               settings = $.extend(settings, getRegionOrCulture(settings.region))
+             }
+             settings.regex = generateRegex(settings);
+             return this.each(function() {
+               $this = $(this);
+               var num = "0";
+               num = $this[$this.is("input, select, textarea") ? "val" : "html"]();
+               if (num.search("\\(") >= 0) {
+                 num = "-" + num
+               }
+               if (num === "" || (num === "-" && settings.roundToDecimalPlace === -1)) {
+                 return
+               }
+               if (isNaN(num)) {
+                 num = num.replace(settings.regex, "");
+                 if (num === "" || (num === "-" && settings.roundToDecimalPlace === -1)) {
+                   return
+                 }
+                 if (settings.decimalSymbol != ".") {
+                   num = num.replace(settings.decimalSymbol, ".")
+                 }
+                 if (isNaN(num)) {
+                   num = "0"
+                 }
+               }
+               var numParts = String(num).split(".");
+               var isPositive = (num == Math.abs(num));
+               var hasDecimals = (numParts.length > 1);
+               var decimals = (hasDecimals ? numParts[1].toString() : "0");
+               var originalDecimals = decimals;
+               num = Math.abs(numParts[0]);
+               num = isNaN(num) ? 0 : num;
+               if (settings.roundToDecimalPlace >= 0) {
+                 decimals = parseFloat("1." + decimals);
+                 decimals = decimals.toFixed(settings.roundToDecimalPlace);
+                 if (decimals.substring(0, 1) == "2") {
+                   num = Number(num) + 1
+                 }
+                 decimals = decimals.substring(2)
+               }
+               num = String(num);
+               if (settings.groupDigits) {
+                 for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {
+                   num = num.substring(0, num.length - (4 * i + 3)) + settings.digitGroupSymbol + num.substring(num.length - (4 * i + 3))
+                 }
+               }
+               if ((hasDecimals && settings.roundToDecimalPlace == -1) || settings.roundToDecimalPlace > 0) {
+                 num += settings.decimalSymbol + decimals
+               }
+               var format = isPositive ? settings.positiveFormat : settings.negativeFormat;
+               var money = format.replace(/%s/g, settings.symbol);
+               money = money.replace(/%n/g, num);
+               var $destination = $([]);
+               if (!destination) {
+                 $destination = $this
+               } else {
+                 /* global $this */
+                 $destination = $(destination)
+               }
+               $destination[$destination.is("input, select, textarea") ? "val" : "html"](money);
+               if (hasDecimals && settings.eventOnDecimalsEntered && originalDecimals.length > settings.roundToDecimalPlace) {
+                 $destination.trigger("decimalsEntered", originalDecimals)
+               }
+               if (settings.colorize) {
+                 $destination.css("color", isPositive ? "black" : "red")
+               }
+             })
+           };
+           
+           $.fn.toNumber = function(settings) {
+             var defaults = $.extend({
+               name: "toNumber",
+               region: "",
+               global: true
+             }, $.formatCurrency.regions[""]);
+             settings = jQuery.extend(defaults, settings);
+             if (settings.region.length > 0) {
+               settings = $.extend(settings, getRegionOrCulture(settings.region))
+             }
+             settings.regex = generateRegex(settings);
+             return this.each(function() {
+               var method = $(this).is("input, select, textarea") ? "val" : "html";
+               $(this)[method]($(this)[method]().replace("(", "(-").replace(settings.regex, ""))
+             })
+           };
+           
+           $.fn.asNumber = function(settings) {
+             var defaults = $.extend({
+               name: "asNumber",
+               region: "",
+               parse: true,
+               parseType: "Float",
+               global: true
+             }, $.formatCurrency.regions[""]);
+             settings = jQuery.extend(defaults, settings);
+             if (settings.region.length > 0) {
+               settings = $.extend(settings, getRegionOrCulture(settings.region))
+             }
+             settings.regex = generateRegex(settings);
+             settings.parseType = validateParseType(settings.parseType);
+             var method = $(this).is("input, select, textarea") ? "val" : "html";
+             var num = $(this)[method]();
+             num = num ? num : "";
+             num = num.replace("(", "(-");
+             num = num.replace(settings.regex, "");
+             if (!settings.parse) {
+               return num
+             }
+             if (num.length == 0) {
+               num = "0"
+             }
+             if (settings.decimalSymbol != ".") {
+               num = num.replace(settings.decimalSymbol, ".")
+             }
+             return window["parse" + settings.parseType](num)
+           };
+           
+           function getRegionOrCulture(region) {
+             var regionInfo = $.formatCurrency.regions[region];
+             if (regionInfo) {
+               return regionInfo
+             } else {
+               if (/(\w+)-(\w+)/g.test(region)) {
+                 var culture = region.replace(/(\w+)-(\w+)/g, "$1");
+                 return $.formatCurrency.regions[culture]
+               }
+             }
+             return null
+           }
+           
+           function validateParseType(parseType) {
+             switch (parseType.toLowerCase()) {
+               case "int":
+                 return "Int";
+               case "float":
+                 return "Float";
+               default:
+                 throw "invalid parseType"
+             }
+           }
+           
+           function generateRegex(settings) {
+             if (settings.symbol === "") {
+               return new RegExp("[^\\d" + settings.decimalSymbol + "-]", "g")
+             } else {
+               var symbol = settings.symbol.replace("$", "\\$").replace(".", "\\.");
+               return new RegExp(symbol + "|[^\\d" + settings.decimalSymbol + "-]", "g")
+             }
+           }
+           /* global jQuery */
+         })(jQuery);
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                                   /// datapicker function ///
+         // $(function() {
+         //  $(".date").datepicker(
+         //    {dateFormat:"yy-mm-dd"}
+         //    ,"option"
+         //    ,"showAnim"
+         //    ,"fadeIn"
+         //  );
+         // });  
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+         /* global $*/                     /// submit function ///
+         function saveEntree(){
+           var rows=$(".entree-row").length++;
+           var entreeId=$("#entree-id").val();
+           var date=$("#entree-date").val();
+           var rowEntree=new Array();
+           var entree_info={"entreeId":entreeId,"date":date};
+           for(var row_id=0;row_id<rows;row_id++){
+             rowEntree[row_id]=row_id; 
+           }
+           for(var i=0;i<rowEntree.length;i++){
+             var row=i;
+             var acct=$("tr.entree-row:eq("+i+") select[name='account_in']").val();  
+             var debit=$("tr.entree-row:eq("+i+") input[name='debit_in']").val();
+             var credit=$("tr.entree-row:eq("+i+") input[name='credit_in']").val();
+             var memo=$("tr.entree-row:eq("+i+") input[name='memo_in']").val();  
+         //--/--/--/--/ if values are null.../--/--/--//
+             if(debit=="") {
+               debit=0.00;
+             }
+             if(credit=="") {
+               credit=0.00;
+             }
+             if (memo=="") {
+               memo="no memo";
+             }
+             rowEntree[i]= {"acct": acct,"Debit": debit,"credit":credit,"memo":memo };
+           }
+         //--//places entryid and date at first array index //
+           rowEntree.unshift(entree_info);
+         //--// post to server side //
+           $.ajax('ajax/journal_entries.php', {
+               type: 'post',
+               data: JSON.stringify(rowEntree),
+               dataType: 'json',
+               contentType: 'application/json',
+               success: function(data) {$("#alert-msg").html(rows+" journal entries were submitted. <i class=\"fa fa-check-circle alert-success \" aria-hidden=\"true\"></i>").removeClass().addClass("alert-success text-center"); }
+           });
+         }
+         //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/
+                               /// highlight function for totals ///
+         function balanceTotals() {
+           var total_debit = "#total_debit_in";
+           var total_credit = "#total_credit_in";
+           var credit = $(total_credit).text();
+           var debit = $(total_debit).text();
+           var msg_01 = "Oops! Something is not right, credit amount is less than debit amount!  "+ "<i class=\"fa fa-exclamation-triangle alert-warning\" aria-hidden=\"true\"></i> ";
+           var msg_02 = "Oops! Something is not right, debit amount is greater than debit amount!  "+ "<i class=\"fa fa-exclamation-triangle alert-warning\" aria-hidden=\"true\"></i>";
+           var msg_03 = "You're good!  "+ "<i class=\"fa fa-check-circle alert-success \" aria-hidden=\"true\"></i>";
+           var alert_container = "#alert-msg";
+           var cl_b_danger = "balance-danger text-center";
+           var cl_b_warning = "balance-warning text-center";
+           var cl_a_warning = "alert-warning text-center";
+           var cl_b_success = "balance-success text-center";
+           var cl_a_success = "alert-success text-center";
+           if (credit < debit){
+             $(total_credit).removeClass().addClass(cl_b_danger);
+             $(total_debit).removeClass().addClass(cl_b_warning);
+             // $(alert_container).html(msg_01).removeClass().addClass(cl_a_warning);
+           } else if (credit > debit){
+             $(total_credit).removeClass().addClass(cl_b_warning);
+             $(total_debit).removeClass().addClass(cl_b_danger);
+             // $(alert_container).html(msg_02).removeClass().addClass(cl_a_warning);
+           } else if (credit == debit){
+             $(total_credit).removeClass().addClass(cl_b_success);
+             $(total_debit).removeClass().addClass(cl_b_success);
+             // $(alert_container).html(msg_03).removeClass().addClass(cl_a_success);
+           }
+         }
+
+      </script>
+
+      <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+      
+          var reader = new FileReader();
+      
+          reader.onload = function(e) {
+            $('.image-upload-wrap').hide();
+      
+            $('.file-upload-image').attr('src', e.target.result);
+            $('.file-upload-content').show();
+      
+            $('.image-title').html(input.files[0].name);
+          };
+      
+          reader.readAsDataURL(input.files[0]);
+      
+        } else {
+          removeUpload();
+        }
+      }
+      
+      function removeUpload() {
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+      }
+      $('.image-upload-wrap').bind('dragover', function () {
+          $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function () {
+          $('.image-upload-wrap').removeClass('image-dropping');
+      });
+      
+        
+      </script>
+
+      <script>
+      
+        var app = new Vue({
+          el: '#app',
+          
+          data: {
+            message: 'Hello Vue!',
+            pages: [
+              {
+                sections: 0
+              }
+            ]
+          },
+          
+          methods: {
+            
+            addPage: function(event) {
+              
+              var self = this;
+              
+              self.pages.push({
+                sections: 0
+              });
+              
+            },
+            
+            removePage: function(){
+              
+              
+            }
+            
+          }
+        })
+      
+      var app = new Vue({
+        el: '#app2',
+        
+        data: {
+          message: 'Hello Vue!',
+          pages: [
+            {
+              sections: 0
+            }
+          ]
+        },
+        
+        methods: {
+          
+          addPage: function(event) {
+            
+            var self = this;
+            
+            self.pages.push({
+              sections: 0
+            });
+            
+          },
+          
+          removePage: function(){
+            
+            
+          }
+          
+        }
+      })
+
+      </script>
+
+      <script>
+      
+      $(function(){
+        $(".chosen-select").chosen({
+          max_selected_options: 5,
+          width: '100%'
+        }); 
+      })
+    </script>
+
+
+
+      <!-- jquery file uploader -->
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.ui.widget.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.fileupload.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.iframe-transport.js"></script>
+      <script type="text/javascript" src="js/jquery-fancy-uploader/jquery.fancy-fileupload.js"></script>
+      <script type="text/javascript">
+        $('#demo').FancyFileUpload({
+            params : {
+              action : 'fileuploader'
+            },
+            url :'',
+            maxfilesize : 9000000
+          });
+         
+
+      </script>
+
+      <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/chosen.jquery.min.js"></script>
+      
+      <script src="js/main.js"></script>
+      <script src="js/dark.js"></script>
+      
+   </body>
+</html>

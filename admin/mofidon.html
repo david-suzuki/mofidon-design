@@ -1,0 +1,717 @@
+<!doctype html>
+<html class="fixed sidebar-light">
+	<head>
+
+		<!-- Basic -->
+		<meta charset="UTF-8">
+
+		<title>Mofidon Admin Panel - Mofidon</title>
+		<meta name="keywords" content="HTML5 Admin Template" />
+		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+	
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="vendor/animate/animate.compat.css">
+		<link rel="stylesheet" href="vendor/font-awesome/css/all.min.css" />
+		<link rel="stylesheet" href="vendor/boxicons/css/boxicons.min.css" />
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" />
+		<link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+		<link rel="stylesheet" href="vendor/select2/css/select2.css" />
+		<link rel="stylesheet" href="vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
+		<link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css" />
+
+		<!-- Mofidon css -->
+		<link rel="stylesheet" href="css/mofidon.css" />
+
+		<!-- Favicon Icon -->
+		<link rel="icon" type="image/png" href="../images/loogo.png">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+			<header class="header">
+
+				<!-- start: search & user box -->
+				<div class="header-left">
+
+					<div id="userbox" class="userbox">
+						<a href="#" data-bs-toggle="dropdown">
+							<figure class="profile-picture">
+								<img src="img/Elzubair.jpg" alt="Joseph Doe" class="rounded-circle" data-lock-picture="img/!logged-user.jpg" />
+							</figure>
+							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+								<span class="name">Elzubair Mohammed Saleh</span>
+								<span class="role">CEO at Mofidon</span>
+							</div>
+
+							<i class="fa custom-caret"></i>
+						</a>
+
+						<span class="separator"></span>
+
+						<div class="dropdown-menu">
+							<ul class="list-unstyled mb-2">
+								<li class="divider"></li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="user_profile.html"><i class="bx bx-user-circle"></i> My Profile</a>
+								</li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="bx bx-lock"></i> Lock Screen</a>
+								</li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="bx bx-power-off"></i> Logout</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+
+
+					<ul class="notifications">
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+								<i class="bx bx-bell"></i>
+								<span class="badge">3</span>
+							</a>
+
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="float-end badge badge-default">3</span>
+									Alerts
+								</div>
+
+								<div class="content">
+									<ul>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<img src="img/loggo.png" class="logo-width" />
+												</div>
+												<span class="title">Server is Down!</span>
+												<span class="message">Just now</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<img src="img/loggo.png" class="logo-width" />
+												</div>
+												<span class="title">User Locked</span>
+												<span class="message">15 minutes ago</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<img src="img/loggo.png" class="logo-width" />
+												</div>
+												<span class="title">Connection Restaured</span>
+												<span class="message">10/10/2021</span>
+											</a>
+										</li>
+									</ul>
+
+									<hr />
+
+									<div class="text-end">
+										<a href="notifications.html" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+
+				</div>
+				<!-- end: search & user box -->
+
+				<div class="logo-container" style="float: right;">
+					<a href="../4.0.0" class="logo" style="margin-top: -2px;margin-right: 40px;">
+						<img src="img/logo.png" width="130" height="55" alt="Porto Admin" />
+					</a>
+
+					<div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+						<i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+					</div>
+
+				</div>
+
+				
+			</header>
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				<aside id="sidebar-left" class="sidebar-left">
+
+				    <div class="sidebar-header">
+				        <div class="sidebar-title">
+				            Navigation
+				        </div>
+				        <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+				            <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+				        </div>
+				    </div>
+
+				    <div class="nano">
+				        <div class="nano-content">
+				            <nav id="menu" class="nav-main" role="navigation">
+
+				                <ul class="nav nav-main">
+				                    <li class="">
+				                        <a class="nav-link" href="index.html" aria-hidden="true">
+											<i class='bx bx-analyse'></i>
+				                            <span>Statistics</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="control.html">
+				                            <i class="bx bxs-dashboard" aria-hidden="true"></i>
+				                            <span>Control</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="cart.html">
+				                            <i class="bx bxs-shopping-bag-alt" aria-hidden="true"></i>
+				                            <span>Lonely cart</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="expenses.html">
+											<i class='bx bx-money' aria-hidden="true"></i>
+				                            <span>Expenses</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="marketing.html">
+				                            <i class="bx bxl-markdown" aria-hidden="true"></i>
+				                            <span>For Marketing</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="notifications.html">
+				                            <i class="bx bx-bell" aria-hidden="true"></i>
+				                            <span>Notifications</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="employees_tasks.html">
+				                            <i class="fa fa-file-medical-alt" aria-hidden="true"></i>
+				                            <span>Employees Tasks</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="services_block.html">
+				                            <i class="fa fa-store-slash" aria-hidden="true"></i>
+				                            <span>Services blocks</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="mofids_block.html">
+				                            <i class="fas fa-user-clock"></i>
+				                            <span>Mofids blocks</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="works_block.html">
+				                            <i class="fa fa-business-time" aria-hidden="true"></i>
+				                            <span>Works blocks</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="tasks.html">
+				                            <i class='bx bxs-alarm-add' aria-hidden="true"></i>
+				                            <span>Tasks</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="discount.html">
+				                            <i class="bx bxs-discount" aria-hidden="true"></i>
+				                            <span>Discount</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="blogs.html">
+				                            <i class="bx bxl-blogger" aria-hidden="true"></i>
+				                            <span>Blogs</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="nav-active">
+				                        <a class="nav-link" href="mofidon.html">
+											<i class='bx bxs-shopping-bag'  aria-hidden="true"></i>
+				                            <span>Mofidon</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="buyers.html">
+											<i class='bx bxs-user' aria-hidden="true"></i>
+				                            <span>Buyers</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="employees.html">
+				                            <i class="bx bxs-star" aria-hidden="true"></i>
+				                            <span>Employees</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="managers.html">
+				                            <i class="bx bxs-heart" aria-hidden="true"></i>
+				                            <span>Managers</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="services.html">
+				                            <i class="bx bx-sitemap" aria-hidden="true"></i>
+				                            <span>Services</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="works.html">
+				                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+				                            <span>Works</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="spam.html">
+											<i class='bx bxs-sad' aria-hidden="true" ></i>
+				                            <span>Spam</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="tasweeq.html">
+				                            <i class="fa fa-funnel-dollar" aria-hidden="true"></i>
+				                            <span>Tasweeq</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="payout.html">
+											<i class='bx bxs-bank' aria-hidden="true"></i>
+				                            <span>Payout</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="service_review.html">
+				                            <i class="bx bx-show" aria-hidden="true"></i>
+				                            <span>Services review</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="works_review.html">
+				                            <i class="fas fa-eye" aria-hidden="true"></i>
+				                            <span>Works review</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="refund.html">
+											<i class='bx bx-refresh' aria-hidden="true"></i>
+				                            <span>Refund</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="invoices.html">
+				                            <i class="fa fa-receipt" aria-hidden="true"></i>
+				                            <span>Invoices</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="sugesst.html">
+				                            <i class="fa fa-mug-hot" aria-hidden="true"></i>
+				                            <span>Sugesst</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="tothiq.html">
+				                            <i class="fa fa-clipboard-check" aria-hidden="true"></i>
+				                            <span>Tothiq</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="support.html">
+											<i class='bx bx-support' aria-hidden="true"></i>
+				                            <span>Support</span>
+				                        </a>                        
+				                    </li>
+				                    <li class="">
+				                        <a class="nav-link" href="messages_control.html">
+				                            <i class="fa fa-user-secret" aria-hidden="true"></i>
+				                            <span>Messages control</span>
+				                        </a>                        
+				                    </li>
+
+				                </ul>
+				            </nav>
+
+				        </div>
+
+				        <script>
+				            // Maintain Scroll Position
+				            if (typeof localStorage !== 'undefined') {
+				                if (localStorage.getItem('sidebar-left-position') !== null) {
+				                    var initialPosition = localStorage.getItem('sidebar-left-position'),
+				                        sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+
+				                    sidebarLeft.scrollTop = initialPosition;
+				                }
+				            }
+				        </script>
+
+				    </div>
+
+				</aside>
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header right">
+						<h2 class="right mr-5"><b>Mofidon</b></h2>
+
+					</header>
+
+					<!-- start: page -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row mb-3">
+								<h2 class="right">Mofidon</h2>
+								<hr>
+								<div class="col-xl-12 ">
+									<div class="datatable-header">
+										<div class="row align-items-center mb-3">
+											<div class="col-12 col-lg-auto mb-3 mb-lg-0">
+												<a class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4 modal-basic" href="#new_notification">+ Add new notification</a>
+											</div>
+										</div>
+									</div>
+									<div class="card card-modern">
+										<div class="card-body">
+											<div class="row mb-4">
+												<div class="col-4">
+													<div class="form-row">
+														<div class="form-group ">
+															<select class="form-control form-control-modern" name="orderCustomer" required data-plugin-selectTwo>
+																<option value="21" selected>Business</option>
+																<option value="33">Management</option>
+																<option value="55">Languages</option>
+																<option value="60">Programming</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-4">
+													<form action="pages-search-results.html" class="search nav-form">
+														<div class="input-group">
+															<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+															<button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
+														</div>
+													</form>
+												</div>
+											</div>
+											<div class="tabs">
+												<ul class="nav nav-tabs tabs-primary justify-content-end">
+													<li class="nav-item active">
+														<a class="nav-link" data-bs-target="#all" href="#all" data-bs-toggle="tab">All</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-bs-target="#unblocked" href="#unblocked" data-bs-toggle="tab">without block</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-bs-target="#Blocked" href="#Blocked" data-bs-toggle="tab">Blocked</a>
+													</li>
+												</ul>
+												<div class="tab-content">
+													<div id="all" class="tab-pane active">
+														<table class="table table-bordered mb-0" id="datatable-">
+															<thead>
+																<tr>
+																	<th>Mofid name</th>
+																	<th>Mofid email</th>
+																	<th>total services</th>
+																	<th>total works</th>
+																	<th>total orders</th>
+																	<th>total spam</th>
+																	<th>block</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td><a href="mofid.html" class="blue-text">Elzubair Mohammed Saleh</a></td>
+																	<td>alzober1414@gmail.com</td>
+																	<td>12</td>
+																	<td>12</td>
+																	<td>12</td>
+																	<td>12</td>
+																	<td>
+																		<div class="switch switch-sm switch-dark">
+																			<input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+																		</div>
+																	</td>
+																	<td>
+																		<a href="#edit_mofid_details" class="modal-basic"><i class="fa fa-cog black-color"></i></a> &#160;
+																		<a href="#delete_notification" class="modal-basic"><i class="fa fa-trash red-color"></i></a>&#160;
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<div id="unblocked" class="tab-pane">
+														<p>unBlocked</p>
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+													</div>
+													<div id="Blocked" class="tab-pane">
+														<p>Blocked</p>
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Add new notification -->
+									<div id="new_notification" class="modal-block mfp-hide">
+										<section class="card">
+											<header class="card-header">
+												<h2 class="card-title">Add new notification</h2>
+											</header>
+											<div class="card-body">
+												<form>
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="">Title</label>
+															<input type="name" class="form-control" id="" placeholder="title">
+														</div>
+													</div>
+													<div class="form-group ">
+														<label for="inputState">Send to</label>
+														<select id="inputState" class="form-control">
+															<option selected>Mofidon</option>
+														</select>
+													</div>
+													<div class="form-group ">
+														<label for="">Message</label>
+														<div class="col-lg-12">
+															<textarea name="content" data-plugin-markdown-editor rows="10" placeholder="Start typing..."></textarea>
+														</div>
+													</div>
+												</form>
+											</div>
+											<footer class="card-footer">
+												<div class="row">
+													<div class="col-md-12 text-end">
+														<button class="btn btn-primary modal-confirm">Add</button>
+														<button class="btn btn-default modal-dismiss">Cancel</button>
+													</div>
+												</div>
+											</footer>
+										</section>
+									</div>
+									<!-- Block mofid -->
+									<div id="block_mofid" class="modal-block mfp-hide">
+										<section class="card">
+											<header class="card-header">
+												<h2 class="card-title">Block mofid form</h2>
+											</header>
+											<div class="card-body">
+												<form>
+													<div class="form-group ">
+														<label for="">Blocked reason</label>
+														<div class="col-lg-12">
+															<textarea name="content" data-plugin-markdown-editor rows="10" placeholder="Start typing..."></textarea>
+														</div>
+													</div>
+												</form>
+											</div>
+											<footer class="card-footer">
+												<div class="row">
+													<div class="col-md-12 text-end">
+														<button class="btn btn-primary modal-confirm">Add</button>
+														<button class="btn btn-default modal-dismiss">Cancel</button>
+													</div>
+												</div>
+											</footer>
+										</section>
+									</div>
+									<!-- Edit mofid details -->
+									<div id="edit_mofid_details" class="modal-block mfp-hide">
+										<section class="card">
+											<header class="card-header">
+												<h2 class="card-title">See Mofid details form</h2>
+											</header>
+											<div class="card-body">
+												<form>
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="">Mofid name</label>
+															<input type="name" class="form-control" id="" value="Elzubair Mohammed Saleh">
+														</div>
+													</div>
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="">Mofid email</label>
+															<input type="email" class="form-control" id="" value="alzober1414@gmail.com">
+														</div>
+													</div>
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="">Mofid Nikname</label>
+															<input type="name" class="form-control" id="" value="Programmer">
+														</div>
+													</div>
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="">Country</label>
+															<input type="name" class="form-control" id="" value="Sudan">
+														</div>
+													</div>
+													<div class="form-group ">
+														<label for="">About Mofid</label>
+														<div class="col-lg-12">
+															<textarea class="form-control" rows="3" data-plugin-maxlength maxlength="140" value="hi"></textarea>
+														</div>
+													</div>
+												</form>
+											</div>
+											<footer class="card-footer">
+												<div class="row">
+													<div class="col-md-12 text-end">
+														<button class="btn btn-primary modal-dismiss">Ok</button>
+														<button class="btn btn-default modal-dismiss">Cancel</button>
+													</div>
+												</div>
+											</footer>
+										</section>
+									</div>
+									<!-- Delete mofid offer -->
+									<div id="delete_notification" class="modal-block mfp-hide">
+										<section class="card">
+											<header class="card-header">
+												<h2 class="card-title">Are you sure?</h2>
+											</header>
+											<div class="card-body">
+												<div class="modal-wrapper">
+													<div class="modal-text">
+														<p class="mb-0">Are you sure that you want to delete this image?</p>
+													</div>
+												</div>
+											</div>
+											<footer class="card-footer">
+												<div class="row">
+													<div class="col-md-12 text-end">
+														<button class="btn btn-primary modal-confirm">Confirm</button>
+														<button class="btn btn-default modal-dismiss">Cancel</button>
+													</div>
+												</div>
+											</footer>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- end: page -->
+				</section>
+			</div>
+
+
+		</section>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.js"></script>
+		<script src="vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+		<script src="vendor/popper/umd/popper.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="vendor/common/common.js"></script>
+		<script src="vendor/nanoscroller/nanoscroller.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+		<!-- Specific Page Vendor -->
+		<script src="vendor/select2/js/select2.js"></script>
+		<script src="vendor/pnotify/pnotify.custom.js"></script>
+
+
+
+		<!-- Specific Page Vendor -->
+		<script src="vendor/jquery-ui/jquery-ui.js"></script>
+		<script src="vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="vendor/select2/js/select2.js"></script>
+		<script src="vendor/bootstrapv5-multiselect/js/bootstrap-multiselect.js"></script>
+		<script src="vendor/jquery-maskedinput/jquery.maskedinput.js"></script>
+		<script src="vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+		<script src="vendor/bootstrapv5-colorpicker/js/bootstrap-colorpicker.js"></script>
+		<script src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+		<script src="vendor/fuelux/js/spinner.js"></script>
+		<script src="vendor/dropzone/dropzone.js"></script>
+		<script src="vendor/bootstrap-markdown/js/markdown.js"></script>
+		<script src="vendor/bootstrap-markdown/js/to-markdown.js"></script>
+		<script src="vendor/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+		<script src="vendor/codemirror/lib/codemirror.js"></script>
+		<script src="vendor/codemirror/addon/selection/active-line.js"></script>
+		<script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+		<script src="vendor/codemirror/mode/javascript/javascript.js"></script>
+		<script src="vendor/codemirror/mode/xml/xml.js"></script>
+		<script src="vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="vendor/codemirror/mode/css/css.js"></script>
+		<script src="vendor/summernote/summernote-bs4.js"></script>
+		<script src="vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+		<script src="vendor/ios7-switch/ios7-switch.js"></script>
+
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<!-- Examples -->
+		<script src="js/examples/examples.modals.js"></script>
+
+		<!-- Examples -->
+		<script src="js/examples/examples.header.menu.js"></script>
+		<script src="js/examples/examples.ecommerce.datatables.list.js"></script>
+		
+		<!-- Specific Page Vendor -->
+		<script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+		<script src="vendor/datatables/media/js/dataTables.bootstrap5.min.js"></script>
+
+		<!-- Examples -->
+		<script src="js/examples/examples.datatables.default.js"></script>
+		<script src="js/examples/examples.datatables.row.with.details.js"></script>
+		<script src="js/examples/examples.datatables.tabletools.js"></script>
+		<!-- Examples -->
+		<script src="js/examples/examples.advanced.form.js"></script>
+		<script src="vendor/ios7-switch/ios7-switch.js"></script>
+	</body>
+</html>
